@@ -1,4 +1,6 @@
 package Minigames;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class TicTacToe {
   private Scanner input = new Scanner(System.in);
