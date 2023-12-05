@@ -2,6 +2,7 @@ package Minigames;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Stack;
 
 /*
@@ -50,8 +51,14 @@ public class HungryCustomers
         this.mushroomPizzaTray = new Stack<>();
         this.pineapplePizzaTray = new Stack<>();
 
-        //For every tray of pizza, we add a total amount of 6 pizza slices
+        //A method where that adds a total amount of 6 pizza slices for every tray of pizza
         initializeTraysWithPizzaSlices();
+
+        //Initialize our list of customers
+        this.listOfCustomers = new LinkedList<>();
+
+        //A method to add all of the customers who want pizza
+
 
         //Initialize our Queue of customers
         this.listOfCustomers = new LinkedList<>();
@@ -86,6 +93,24 @@ public class HungryCustomers
             this.pepperoniPizzaTray.push(2);
             this.mushroomPizzaTray.push(3);
             this.pineapplePizzaTray.push(4);
+        }
+    }
+
+    /*A method to initialize the listOfCustomers Queue with values 1, 2, 3, & 4 where each value
+      indicates what pizza slice they want*/
+    public void initializeListOfCustomers()
+    {
+        int maxCheeseSlices = 0;
+        int maxPepperoniSlices = 0;
+        int maxMushroomSlices = 0;
+        int maxPineappleSlices = 0;
+
+        Random random = new Random();
+
+        while(maxCheeseSlices != 6 && maxPepperoniSlices != 6 &&
+              maxMushroomSlices != 6 && maxPineappleSlices != 6)
+        {
+            int addRandomCustomer = random.nextInt(1, 5);
         }
     }
 }
