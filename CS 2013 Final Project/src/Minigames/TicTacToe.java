@@ -1,6 +1,18 @@
 package Minigames;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+/*
+    1) Class Name: TicTacToe
+
+    2) How will this class work?:
+        - This class will work by returning a boolean value in the play() method that will indicate whether the player has won or lost the minigame.
+          The player is 'X' and the computer is 'O'. You must beat the computer in the classic game of TicTacToe. Safety features have been implemented,
+          including invalid user input, index exceptions, etc.
+
+    3) Class made by: Md R. Islam
+
+    4) Course: Java 2013 Programming with Data Structures
+ */
 
 public class TicTacToe {
   private Scanner input = new Scanner(System.in);
