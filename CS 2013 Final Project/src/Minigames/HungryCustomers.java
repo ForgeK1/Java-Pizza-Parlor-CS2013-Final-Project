@@ -3,18 +3,18 @@ package Minigames;
 import java.util.*;
 
 /*
-    1) Minigame Name: HungryCustomers
+    1) Class Name: HungryCustomers
 
-    2) How will this mini-game work?:
+    2) How will this class work?:
         As a pizza parlor co-owner with 4 different trays of Pizzas you are selling to your
         customers. There is a line of hungry customers who tell you to give them a specific
         pizza slice. As such, you have three lives and you must give out all of the pizzas
         in order to beat the minigame. Every time you give out the wrong one you will be
         deducted a life and if you reach 0 lives you will lose the minigame.
 
-    3) Minigame made by: Keyvan M. Kani
+    3) Class made by: Keyvan M. Kani
 
-    4) Course: Java 2013 Data Structures & Algorithms
+    4) Course: Java 2013 Programming with Data Structures
 */
 public class HungryCustomers
 {
