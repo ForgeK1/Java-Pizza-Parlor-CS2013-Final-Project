@@ -148,7 +148,7 @@ public class HungryCustomers
             else
             {
                 System.out.println("\nCustomer: \"EWWWW this is not the pizza I wanted! I'm going to the back of " +
-                                    "the \nline again. Get me the right pizza next time. :'(");
+                                    "the \nline again. Get me the right pizza slice next time. :'(");
 
                 //Customer moves to the back of the line
                 this.listOfCustomers.add(customer);
