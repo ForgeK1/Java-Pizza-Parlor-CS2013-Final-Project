@@ -68,9 +68,26 @@ public class HungryCustomers
         //A scanner to allow input for the player
         Scanner input = new Scanner(System.in);
 
-        System.out.println("*** Title: HUNGRY CUSTOMERS MINIGAME! ***");
+        System.out.println("----------------------------------------");
+        System.out.println("| Title of Minigame: HUNGRY CUSTOMERS! |");
+        System.out.println("----------------------------------------");
 
-        System.out.println("\n**Insert Prompt Here** --> You have three lives to start with!");
+        System.out.println("\nYour other Pizza Parlor co-owner gave you the task of serving customers for the day. " +
+                           "\nIt seems that you have to serve _16 customers_ where each customer requests a cheese " +
+                           "\npepperoni, mushroom, or a pineapple pizza slice to go! " +
+
+                           "\n\nMake sure to pick the correct pizza slice from the following four pizza trays as " +
+                           "\nrequested by the customer (*Input the following # in the console when choosing a " +
+                           "\npizza slice*): " +
+
+                           "\n\nCheese Pizza Tray:    1" +
+                           "\nPepperoni Pizza Tray: 2" +
+                           "\nMushroom Pizza Tray:  3" +
+                           "\nPineapple Pizza Tray: 4" +
+
+                           "\n\nNumber of lives: You have three chances! For every customer that you fail to give " +
+                           "\nthe right pizza slice you are downed by one life. Lose all of your lives and you " +
+                           "\nare out and cannot serve customers anymore. Good luck! :)");
 
         while(!this.listOfCustomers.isEmpty())
         {
@@ -131,7 +148,7 @@ public class HungryCustomers
             else
             {
                 System.out.println("\nCustomer: \"EWWWW this is not the pizza I wanted! I'm going to the back of " +
-                                    "the \nline again. Get me the right pizza next time :'(");
+                                    "the \nline again. Get me the right pizza next time. :'(");
 
                 //Customer moves to the back of the line
                 this.listOfCustomers.add(customer);
@@ -151,7 +168,7 @@ public class HungryCustomers
                 System.out.println("\n**ASCII ART showing a GAME OVER Screen**");
 
                 System.out.println("\nYour customers were unhappy! You lost all of your lives and now you " +
-                                   "you went out \nof business!");
+                                   "you went out \nof business! X_X");
 
                 return false;
             }
@@ -162,7 +179,7 @@ public class HungryCustomers
         System.out.println("\n**ASCII ART showing a GAME WON Screen**");
 
         System.out.println("\nAll of your customers are happy! You gave out all of the pizzas you had for the \nday " +
-                           "and you recieved maximum customer satisfaction ^0^");
+                           "and you recieved maximum customer satisfaction. ^0^");
 
         //Returning true indicates that we passed the minigame!
         return true;
@@ -179,7 +196,7 @@ public class HungryCustomers
         
         Therefore, when a customer comes up to the front, we see which pizza slice they want
         and we pick the correct pizza tray by inputing a number between 1 - 4*/
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 4; i++)
         {
             this.cheesePizzaTray.push(1);
             this.pepperoniPizzaTray.push(2);
@@ -199,27 +216,27 @@ public class HungryCustomers
 
         Random random = new Random();
 
-        while(maxCheeseSlices != 6 || maxPepperoniSlices != 6 ||
-              maxMushroomSlices != 6 || maxPineappleSlices != 6)
+        while(maxCheeseSlices != 4 || maxPepperoniSlices != 4 ||
+              maxMushroomSlices != 4 || maxPineappleSlices != 4)
         {
             int addRandomCustomer = random.nextInt(1, 5);
 
-            if(addRandomCustomer == 1 && maxCheeseSlices < 6)
+            if(addRandomCustomer == 1 && maxCheeseSlices < 4)
             {
                 this.listOfCustomers.add(1);
                 maxCheeseSlices++;
             }
-            else if(addRandomCustomer == 2 && maxPepperoniSlices < 6)
+            else if(addRandomCustomer == 2 && maxPepperoniSlices < 4)
             {
                 this.listOfCustomers.add(2);
                 maxPepperoniSlices++;
             }
-            else if(addRandomCustomer == 3 && maxMushroomSlices < 6)
+            else if(addRandomCustomer == 3 && maxMushroomSlices < 4)
             {
                 this.listOfCustomers.add(3);
                 maxMushroomSlices++;
             }
-            else if(addRandomCustomer == 4 && maxPineappleSlices < 6)
+            else if(addRandomCustomer == 4 && maxPineappleSlices < 4)
             {
                 this.listOfCustomers.add(4);
                 maxPineappleSlices++;
