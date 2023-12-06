@@ -1,9 +1,6 @@
 package Minigames;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
 
 /*
     1) Minigame Name: HungryCustomers
@@ -58,22 +55,117 @@ public class HungryCustomers
         this.listOfCustomers = new LinkedList<>();
 
         //A method to add all of the customers who want pizza
-
-
-        //Initialize our Queue of customers
-        this.listOfCustomers = new LinkedList<>();
+        initializeListOfCustomers();
     }
 
     //3) Methods
 
     /*A method to play the minigame. If the player beats the minigame, we will return a
       true boolean value in order to reveal a ministory. However, if they do not then we
-      will return a false booleon value instead.*/
+      will return a false booleon value instead to indicate that they failed the minigame.*/
     public boolean play()
     {
-        boolean win = false;
+        //A scanner to allow input for the player
+        Scanner input = new Scanner(System.in);
 
-        return win;
+        System.out.println("*** Title: HUNGRY CUSTOMERS MINIGAME! ***");
+
+        System.out.println("\n**Insert Prompt Here** --> You have three lives to start with!");
+
+        while(!this.listOfCustomers.isEmpty())
+        {
+            //A print statement to indicate the top block of text for the current customer
+            System.out.println("\n----------------------------------------------------------------------------------");
+
+            //A variable & a switch statement to find the customer and their requested pizza slice
+            int customer = this.listOfCustomers.remove();
+            String requestedPizzaSlice = "";
+
+            switch(customer)
+            {
+                case 1: requestedPizzaSlice = "Cheese Pizza Slice"; break;
+                case 2: requestedPizzaSlice = "Pepperoni Pizza Slice"; break;
+                case 3: requestedPizzaSlice = "Mushroom Pizza Slice"; break;
+                case 4: requestedPizzaSlice = "Pineapple Pizza Slice"; break;
+                default: requestedPizzaSlice = "Something went wrong with the switch statement";
+            }
+
+            //Shows ASCII art of customer. Note: There will be 4 different ASCII art customers
+            System.out.println("**Insert ASCII Art of customer**");
+
+            System.out.println("\nCustomer: \"Hi! I would like a " + requestedPizzaSlice + " please!\"");
+
+            //Prompts the player to pick the correct pizza slice for the customer
+            System.out.print("Choose the choice of pizza to give this customer: ");
+
+            int chosenPizzaSliceByPlayer = input.nextInt();
+
+            /*if statement --> If the player picks from the correct pizza tray, then the customer is happy and we
+                               remove a pizza slice from it's associated tray (Stack)
+
+              else state.  --> If the player chose the wrong pizza tray, then the customer will move to the back of
+                               the line (re-added back to the Queue) and the chosen pizza slice is not removed
+                               from its associated pizza tray
+
+              Note: The player will never have to give a pizza slice to a customer from an empty tray because
+                    there are 6 customers for every 6 slices in each pizza tray*/
+            if(chosenPizzaSliceByPlayer == customer)
+            {
+                System.out.println("\n**Insert ASCII ART of Pizza Slice chosen**");
+
+                System.out.println("\nCustomer: \"Mmmmm delicius! Thank you for this " + requestedPizzaSlice +
+                                   "! :P");
+
+                System.out.println("\nNumber of lives: " + this.numLives);
+
+                switch(chosenPizzaSliceByPlayer)
+                {
+                    case 1: this.cheesePizzaTray.pop(); break;
+                    case 2: this.pepperoniPizzaTray.pop(); break;
+                    case 3: this.mushroomPizzaTray.pop(); break;
+                    case 4: this.pineapplePizzaTray.pop(); break;
+                    default: System.out.println("\nSomething went wrong in the chosenPizzaByPlayer switch " +
+                                                "statement");
+                }
+            }
+            else
+            {
+                System.out.println("\nCustomer: \"EWWWW this is not the pizza I wanted! I'm going to the back of " +
+                                    "the \nline again. Get me the right pizza next time :'(");
+
+                //Customer moves to the back of the line
+                this.listOfCustomers.add(customer);
+
+                //Removes a life count from the player
+                this.numLives--;
+
+                System.out.println("\nNumber of lives: " + this.numLives);
+            }
+
+            //A print statement to indicate the bottom block of text for the current customer
+            System.out.println("----------------------------------------------------------------------------------\n");
+
+            //If the number of lives drops to 0, we return false which means they lose the minigame
+            if(numLives == 0)
+            {
+                System.out.println("\n**ASCII ART showing a GAME OVER Screen**");
+
+                System.out.println("\nYour customers were unhappy! You lost all of your lives and now you " +
+                                   "you went out \nof business!");
+
+                return false;
+            }
+        }
+
+        /*If we pass the while loop above, it indicates that the player gave out all of their pizza slices and that
+          they won the minigame!*/
+        System.out.println("\n**ASCII ART showing a GAME WON Screen**");
+
+        System.out.println("\nAll of your customers are happy! You gave out all of the pizzas you had for the \nday " +
+                           "and you recieved maximum customer satisfaction ^0^");
+
+        //Returning true indicates that we passed the minigame!
+        return true;
     }
 
     //A method to initialize every tray of pizza with it's own representative value.
@@ -107,10 +199,31 @@ public class HungryCustomers
 
         Random random = new Random();
 
-        while(maxCheeseSlices != 6 && maxPepperoniSlices != 6 &&
-              maxMushroomSlices != 6 && maxPineappleSlices != 6)
+        while(maxCheeseSlices != 6 || maxPepperoniSlices != 6 ||
+              maxMushroomSlices != 6 || maxPineappleSlices != 6)
         {
             int addRandomCustomer = random.nextInt(1, 5);
+
+            if(addRandomCustomer == 1 && maxCheeseSlices < 6)
+            {
+                this.listOfCustomers.add(1);
+                maxCheeseSlices++;
+            }
+            else if(addRandomCustomer == 2 && maxPepperoniSlices < 6)
+            {
+                this.listOfCustomers.add(2);
+                maxPepperoniSlices++;
+            }
+            else if(addRandomCustomer == 3 && maxMushroomSlices < 6)
+            {
+                this.listOfCustomers.add(3);
+                maxMushroomSlices++;
+            }
+            else if(addRandomCustomer == 4 && maxPineappleSlices < 6)
+            {
+                this.listOfCustomers.add(4);
+                maxPineappleSlices++;
+            }
         }
     }
 }
