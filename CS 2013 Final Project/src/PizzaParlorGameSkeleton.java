@@ -54,6 +54,15 @@ public class PizzaParlorGameSkeleton
                 /*Notes: Tell the player that they failed the minigame and did not make the intended pizza slice
                          --> They move on to making the next pizza slice. If its the last iteration, let them
                              know that this was their last pizza making session.*/
+                System.out.println("\nSadly, you have lost this minigame and didn't make the intended pizza slice :(");
+
+                if(miniStory == 6) {
+                    System.out.println("This was the last minigame and therefore was your FINAL" +
+                                       " pizza making session! ");
+                }
+                else {
+                    continue;
+                }
 
             }
 
