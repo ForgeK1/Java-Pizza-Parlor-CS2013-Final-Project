@@ -129,7 +129,7 @@ public class PizzaParlorGameSkeleton
 
             case 2:
                 meatLoversPizzaSlice();
-                System.out.println("Since that incident, Sarah always chats with Giovanni from time to time whenever she visits the parlor to grab a slice of pizza after work.\n" +
+                System.out.println("\n Since that incident, Sarah always chats with Giovanni from time to time whenever she visits the parlor to grab a slice of pizza after work.\n" +
                         " Through their interactions, she realizes Giovanni's passion for cooking aligns with her own interest in culinary arts.\n" +
                         " She asks him about pizza making, and he's thrilled to share tips and tricks of Italian cuisine and where he’d learned them from.\n" +
                         " They bond over their love for perfecting the art of pizza, and Sarah starts experimenting with recipes at home, occasionally seeking advice from Giovanni.\n");
@@ -139,7 +139,7 @@ public class PizzaParlorGameSkeleton
                 break;
             case 3:
                 mushroomPizzaSlice();
-                System.out.println("The parlor faced financial strains due to a burst water pipe that led to an overflow of water which damaged the ovens that cooked the pizzas in the kitchen.\n" +
+                System.out.println("\n The parlor faced financial strains due to a burst water pipe that led to an overflow of water which damaged the ovens that cooked the pizzas in the kitchen.\n" +
                         " Hearing this bad news from Giovanni, Sarah got the idea to hold a fundraiser night in order to lessen the financial burden on him.\n" +
                         " With her organizational skills and social network with her friends and family, she brought in a crowd of people to her community-building event to encourage folks to donate funding for Giovanni’s parlor.\n" +
                         " From there, Giovanni had a set of several different Italian pizzas as accommodating food he and Sarah helped cook together at his place beforehand.\n" +
@@ -150,7 +150,7 @@ public class PizzaParlorGameSkeleton
                 break;
             case 4:
                 olivePizzaSlice();
-                System.out.println("While driving back from work and to her home on the highway,\n" +
+                System.out.println("\n While driving back from work and to her home on the highway,\n" +
                         " Sarah would recount the memories that brought her joy in helping Giovanni cook pizzas and bring in her friends and family in preparation for that event.\n" +
                         " Such as creating numerous Italian pizzas, having social interactions with different folks she’s never met before,\n" +
                         " and how big of a success the event was that led Giovanni to be more relaxed overall.\n" +
@@ -163,7 +163,7 @@ public class PizzaParlorGameSkeleton
                 break;
             case 5:
                 pineapplePizzaSlice();
-                System.out.println("Waking up, Sarah sees herself on a medical bed at a nearby hospital located next to the company she works at.\n" +
+                System.out.println("\n Waking up, Sarah sees herself on a medical bed at a nearby hospital located next to the company she works at.\n" +
                         " To her left was Giovanni who was relieved to see her conscious again.\n" +
                         " To her right was the doctor who had been frequently checking on her for months at a time.\n" +
                         " After Sarah becomes fully conscious, the doctor lets her know that she has fallen into a coma for the past three months\n" +
@@ -177,7 +177,7 @@ public class PizzaParlorGameSkeleton
                 break;
             case 6:
                 pepperoniPizzaSlice();
-                System.out.println("After getting out of the hospital Giovanni offers her to come to his parlor since it would be a nice place to relax after all of the trouble she went through with that crash.\n" +
+                System.out.println("\n After getting out of the hospital Giovanni offers her to come to his parlor since it would be a nice place to relax after all of the trouble she went through with that crash.\n" +
                         " Entering the door, Sarah is suddenly surprised by her friends and family along with the party decorations all around the parlor.\n" +
                         " Giovanni explains to her that he threw a surprise party through her family to celebrate that she came out of the crash alright.\n" +
                         " After partying for so long, Giovanni offers her a partnership in the pizza parlor business to work together to make it thrive even more.\n" +

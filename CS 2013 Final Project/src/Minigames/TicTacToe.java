@@ -32,6 +32,10 @@ public class TicTacToe {
     public boolean play() {
         boolean keepPlaying = true;
 
+        System.out.println("------------------------------------");
+        System.out.println("| Title of Minigame: TIC-TAC-TOE! |");
+        System.out.println("------------------------------------");
+
         do {
             try {
                 display(this.board);
