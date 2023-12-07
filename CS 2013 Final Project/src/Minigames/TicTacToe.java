@@ -47,6 +47,7 @@ public class TicTacToe {
                     keepPlaying = false;
                     display(this.board);
                     System.out.println("Game is tied...");
+                    return false;
                 }
 
                 computerMove();
@@ -60,6 +61,7 @@ public class TicTacToe {
                     keepPlaying = false;
                     display(this.board);
                     System.out.println("Game is tied...");
+                    return false;
                 }
 
 
@@ -141,7 +143,7 @@ public class TicTacToe {
                 break;
             }
             else {
-                System.out.print("Position is taken! Try again: ");
+                System.out.print("Invalid position! Try again: ");
             }
         }
 
