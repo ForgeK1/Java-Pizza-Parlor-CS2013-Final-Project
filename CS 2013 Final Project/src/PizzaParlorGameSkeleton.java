@@ -161,6 +161,8 @@ public class PizzaParlorGameSkeleton
 
         switch (miniStory) {
             case 1:
+                System.out.println("\n Mini-Story #" + miniStory);
+                System.out.println("-----------------");
                 cheesePizzaSlice();
                 System.out.println("\n Sarah was a diligent office worker at a big tech company that frequently visited"
                         + " a local pizza parlor owned by Giovanni. \n" +
@@ -178,6 +180,8 @@ public class PizzaParlorGameSkeleton
                 break;
 
             case 2:
+                System.out.println("\n Mini-Story #" + miniStory);
+                System.out.println("-----------------");
                 meatLoversPizzaSlice();
                 System.out.println("\n Since that incident, Sarah always chats with Giovanni from time to time whenever"
                         + " she visits the parlor to grab a slice of pizza after work.\n" +
@@ -192,6 +196,8 @@ public class PizzaParlorGameSkeleton
                 String letter2 = input.next();
                 break;
             case 3:
+                System.out.println("\n Mini-Story #" + miniStory);
+                System.out.println("-----------------");
                 mushroomPizzaSlice();
                 System.out.println("\n The parlor faced financial strains due to a burst water pipe that led to an" +
                         " overflow of water which damaged the ovens that cooked the pizzas in the kitchen.\n" +
@@ -209,6 +215,8 @@ public class PizzaParlorGameSkeleton
                 String letter3 = input.next();
                 break;
             case 4:
+                System.out.println("\n Mini-Story #" + miniStory);
+                System.out.println("-----------------");
                 olivePizzaSlice();
                 System.out.println("\n While driving back from work and to her home on the highway," +
                         " Sarah would recount the memories that brought her joy in helping\n Giovanni cook pizzas and" +
@@ -227,6 +235,8 @@ public class PizzaParlorGameSkeleton
                 String letter4 = input.next();
                 break;
             case 5:
+                System.out.println("\n Mini-Story #" + miniStory);
+                System.out.println("-----------------");
                 pineapplePizzaSlice();
                 System.out.println("\n Waking up, Sarah sees herself on a medical bed" +
                         " at a nearby hospital located next" + " to the company she works at.\n" +
@@ -248,6 +258,8 @@ public class PizzaParlorGameSkeleton
                 String letter5 = input.next();
                 break;
             case 6:
+                System.out.println("\n Mini-Story #" + miniStory);
+                System.out.println("-----------------");
                 pepperoniPizzaSlice();
                 System.out.println("\n After getting out of the hospital Giovanni offers" +
                         " her to come to his parlor since it would be a nice place to relax" +
