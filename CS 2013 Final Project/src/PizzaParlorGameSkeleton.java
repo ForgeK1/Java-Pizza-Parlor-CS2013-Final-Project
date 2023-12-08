@@ -128,9 +128,9 @@ public class PizzaParlorGameSkeleton
                 System.out.println("\n Sarah was a diligent office worker at a big tech company that frequently visited"
                         + " a local pizza parlor owned by Giovanni. \n" +
                         " Compared to her mundane nine-to-five job and not-so-enthusiastic boss," +
-                        " she's always struck by the warm feel of the restaurant and the welcoming environment that" +
+                        "\n she's always struck by the warm feel of the restaurant and the welcoming environment that" +
                         " makes her feel at home.\n" +
-                        " One busy evening, Sarah notices the lack of workers at Giovanni’s local restaurant as he" +
+                        " One busy evening, Sarah notices the lack of workers at Giovanni’s local\n restaurant as he" +
                         " struggles to clear the tables for new customers who would want to enjoy his parlor.\n" +
                         " And so, she offers to help clear tables which led to Giovanni accepting her gesture of" +
                         " kindness.\n" +
@@ -161,20 +161,20 @@ public class PizzaParlorGameSkeleton
                         " Hearing this bad news from Giovanni, Sarah got the idea to hold a fundraiser night in order"+
                         " to lessen the financial burden on him.\n" +
                         " With her organizational skills and social network with her friends and family," +
-                        " she brought in a crowd of people to her community-building event to encourage folks to" +
+                        " she brought in a crowd of people to her\n community-building event to encourage folks to" +
                         " donate" + " funding for Giovanni’s parlor.\n" +
                         " From there, Giovanni had a set of several different Italian pizzas as accommodating food he"+
                         " and Sarah helped cook together at his place beforehand.\n" +
                         " Overall, the event was easily a success that led Giovanni more to a financial gain rather" +
-                        " than a financial loss\n");
+                        " than a financial loss.\n");
 
                 System.out.print("Enter any letter to continue with the next minigame: ");
                 String letter3 = input.next();
                 break;
             case 4:
                 olivePizzaSlice();
-                System.out.println("\n While driving back from work and to her home on the highway,\n" +
-                        " Sarah would recount the memories that brought her joy in helping Giovanni cook pizzas and" +
+                System.out.println("\n While driving back from work and to her home on the highway," +
+                        " Sarah would recount the memories that brought her joy in helping\n Giovanni cook pizzas and" +
                         " bring in her friends and family in preparation for that event.\n" +
                         " Such as creating numerous Italian pizzas, having social interactions with different folks" +
                         " she’s never met before,\n" +
@@ -198,12 +198,12 @@ public class PizzaParlorGameSkeleton
                         " After Sarah becomes fully conscious, the doctor lets her know that" +
                         " she has fallen" + " into a coma for the past three months\n" +
                         " The doctor further added that she doesn’t have any bone-fracturing" +
-                        " injuries as most of the issue lies in the severe head injury the brain received from the"+
+                        " injuries as most of the issue lies in the severe\n head injury the brain received from the"+
                         " fatal car crash.\n" + " Knowing that Sarah would be alright," +
                         " she would be out of the hospital" + " in the next two weeks.\n" +
                         " During those two weeks, she makes a funny joke about how Giovanni sees her every single day"+
                         " even though the doctor said that she would be totally fine.\n" +
-                        " As they share a laugh, Giovanni reveals a touching truth—he halted his pizza parlor business"+
+                        " As they share a laugh, Giovanni reveals a touching truth—he halted his pizza parlor business\n"+
                         " during those long months to ensure he could be there for Sarah revealing" +
                         " his unwavering care and concern for her.\n");
 
