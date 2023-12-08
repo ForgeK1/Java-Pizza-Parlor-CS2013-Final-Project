@@ -19,6 +19,9 @@ public class PizzaParlorGameSkeleton
     //A main class to run our game
     public static void main(String[] args)
     {
+        //A scanner variable to use to wait for user input
+        Scanner input = new Scanner(System.in);
+
         //A section to keep our minigame instances
         TicTacToe minigame1 = new TicTacToe();
         HungryCustomers minigame2 = new HungryCustomers();
@@ -27,10 +30,44 @@ public class PizzaParlorGameSkeleton
         HungryCustomers minigame5 = new HungryCustomers();
         HungryCustomers minigame6 = new HungryCustomers();
 
-        //An ASCII art showcasing a pizza parlor kitchen and a person standing next to a pizza-making station
-        asciiKitchen();
+        /*An array to keep track of the number of pizzas created by player. The size of the array will be 6
+          and we will initialize all of the slots to 0. If the player completes a minigame for a specific slice,
+          then we convert that slot to 1.
+            Index 0 -->
+            Index 1 -->
+            Index 2 -->
+            Index 3 -->
+            Index 4 -->
+            Index 5 -->
+        */
+        int[] numPizzaSlicesMade = {0, 0, 0, 0, 0, 0};
 
-        System.out.println("\n*Prompt of the game and what the player needs to know*");
+        //ASCII art of the title of the game
+        asciiTitleOfGame(); System.out.println("\n*ASCII art of the title of the game goes here*");
+
+        //An ASCII art showcasing a pizza parlor kitchen and a person standing next to a pizza-making station
+        asciiKitchen(); System.out.println("\n*ASCII art of the kitchen goes here*");
+
+        System.out.println("\n__DESCRIPTION OF THE GAME__");
+        System.out.println("Welcome to the Pizza Parlor! You've been chosen by your renowned pizza parlor co-owner to " +
+                           "embark on a unique \nculinary adventure. Your mission? Craft the ultimate pizza " +
+                           "masterpiece comprising six distinct slices, each from a \ntreasured recipe handed down " +
+                           "by your co-owner. As you assemble each slice, delve into the intertwined tales that " +
+                           "\nunfold with every completed portion. Get ready to savor not just the flavors but the " +
+                           "stories behind them. \nAre you ready to begin your delicious journey?");
+
+        System.out.println("\n__HOW TO PLAY__");
+        System.out.println("Prepare yourself for a challenge! To create the ultimate pizza, you'll face six unique " +
+                           "mini-games, each \nrepresenting a different slice of the pie. Successfully conquering a " +
+                           "mini-game means mastering the recipe for \nthat particular pizza slice and unlocking a " +
+                           "captivating mini-story. Your ultimate objective? Triumph over all \nsix mini-games to " +
+                           "gather and piece together each mini-story, revealing a connected narrative that unfolds " +
+                           "as \nyou craft the perfect pizza. Get ready to game, cook, and uncover the tales behind " +
+                           "the flavors!");
+
+        //Utilizing a scanner variable for the user to prompt the player to start the game
+        System.out.print("\nInput any letter to begin: ");
+        input.next().charAt(0);
 
         //A for loop to play 6 minigames and showcase each mini-story in sequence
         for(int miniStory = 1; miniStory <= 6; miniStory++)
@@ -65,11 +102,11 @@ public class PizzaParlorGameSkeleton
                 }
 
             }
-
-            /*A method that will congradulate the player on finishing the game, let them know the amount of
-              pizza slices made, and ASCII art of a pizza tray showing the pizza slices they made altogether*/
-            endOfGame();
         }
+
+        /*A method that will congradulate the player on finishing the game, let them know the amount of
+          pizza slices made, and ASCII art of a pizza tray showing the pizza slices they made altogether*/
+        endOfGame();
     }
 
     //----HELPER METHODS---- (This section is where helper methods will be stored)
@@ -239,13 +276,34 @@ public class PizzaParlorGameSkeleton
 
         2) It will also let the player know the amount of pizza slices they made, congratulate them on
            playing the game, and will ask if the player wants to play the game again or exit the game.
-*/
+    */
     public static void endOfGame()
     {
-        //TO DO CODE FOR KEYVAN
+        pizzaTray(); System.out.println("\n*INSERT ASCII ART OF PIZZA TRAY*");
+
+        System.out.println("\nCongratulations, Champion of Pizza Quest! You've overcome the challenges, conquered the " +
+                           "games, and emerged victorious. \nWhether you've mastered a single slice or crafted the full " +
+                           "six-slice masterpiece, your determination and skill have \npropelled you to the pinnacle of " +
+                           "this culinary adventure. Your triumph signifies not just beating the game, but the " +
+                           "\nresilience and spirit you've shown throughout this flavorful journey. You've savored the " +
+                           "victories, relished the \nstories, and truly made this quest your own. Well done, Pizza " +
+                           "Maestro!");
+
+        System.out.println("__PIZZA SLICES COMPLETED__");
+
+        for(int i = 1; i <= 6; i++)
+        {
+
+        }
     }
 
     //----ASCII METHODS---- (This section is where ASCII methods will be stored)
+
+    //A method that will display the title of the game with that will look cool (～￣▽￣)～
+    public static void asciiTitleOfGame()
+    {
+        //TO-DO CODE FOR RANA
+    }
 
     //A method that will showcase an ASCII art of the kitchen in the pizza parlor
     public static void asciiKitchen()
@@ -290,7 +348,7 @@ public class PizzaParlorGameSkeleton
     }
 
     //ASCII art of a pizza tray full of pizza slices for the endOfGame() method
-    public void pizzaTray()
+    public static void pizzaTray()
     {
         //TO-DO CODE FOR RANA
     }

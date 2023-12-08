@@ -68,11 +68,11 @@ public class HungryCustomers
         //A scanner to allow input for the player
         Scanner input = new Scanner(System.in);
 
-        System.out.println("----------------------------------------");
+        System.out.println("\n----------------------------------------");
         System.out.println("| Title of Minigame: HUNGRY CUSTOMERS! |");
         System.out.println("----------------------------------------");
 
-        System.out.println("\nYour other Pizza Parlor co-owner gave you the task of serving customers for the day. " +
+        System.out.println("\nYour Pizza Parlor co-owner gave you the task of serving customers for the day. " +
                            "\nIt seems that you have to serve _16 customers_ where each customer requests a cheese " +
                            "\npepperoni, mushroom, or a pineapple pizza slice to go! " +
 
