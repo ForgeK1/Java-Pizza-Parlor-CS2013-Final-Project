@@ -324,7 +324,7 @@ public class PizzaParlorGameSkeleton
         System.out.println("\nPlease run this program again if you'd like to replay the game and attain all of the " +
                            "mini-stories! \nThank you for playing :)");
 
-        System.out.println("\nGame Made By: Rana Ashour, Shambhavi Bhandari, Jackson ?, MD Islam, & Keyvan M. Kani");
+        System.out.println("\nGame Made By: Rana Ashour, Shambhavi Bhandari, Jackson Le, MD Islam, & Keyvan M. Kani");
     }
 
     //----ASCII METHODS---- (This section is where ASCII methods will be stored)
