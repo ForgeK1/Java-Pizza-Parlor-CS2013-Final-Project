@@ -104,7 +104,7 @@ public class PizzaParlorGameSkeleton
 
         /*A method that will congradulate the player on finishing the game, let them know the amount of
           pizza slices made, and ASCII art of a pizza tray showing the pizza slices they made altogether*/
-        endOfGame();
+        endOfGame(numPizzaSlicesMade);
     }
 
     //----HELPER METHODS---- (This section is where helper methods will be stored)
@@ -276,24 +276,55 @@ public class PizzaParlorGameSkeleton
         2) It will also let the player know the amount of pizza slices they made, congratulate them on
            playing the game, and will ask if the player wants to play the game again or exit the game.
     */
-    public static void endOfGame()
+    public static void endOfGame(int[] numPizzaSlicesMade)
     {
         pizzaTray(); System.out.println("\n*INSERT ASCII ART OF PIZZA TRAY*");
 
-        System.out.println("\nCongratulations, Champion of Pizza Quest! You've overcome the challenges, conquered the " +
-                           "games, and emerged victorious. \nWhether you've mastered a single slice or crafted the full " +
-                           "six-slice masterpiece, your determination and skill have \npropelled you to the pinnacle of " +
-                           "this culinary adventure. Your triumph signifies not just beating the game, but the " +
-                           "\nresilience and spirit you've shown throughout this flavorful journey. You've savored the " +
-                           "victories, relished the \nstories, and truly made this quest your own. Well done, Pizza " +
-                           "Maestro!");
+        System.out.println("\nCongratulations, Champion of Pizza Quest! You've overcome the challenges, conquered " +
+                           "the games, and emerged victorious. \nWhether you've mastered a single slice or crafted " +
+                           "the full six-slice masterpiece, your determination and skill have \npropelled you to " +
+                           "the pinnacle of this culinary adventure. Your triumph signifies not just beating the " +
+                           "game, but the \nresilience and spirit you've shown throughout this flavorful journey. " +
+                           "You've savored the victories, relished the \nstories, and truly made this quest your " +
+                           "own. Well done, Pizza Maestro!");
 
-        System.out.println("__PIZZA SLICES COMPLETED__");
+        //Debug code to see if the table below works
+            //numPizzaSlicesMade = new int[]{1, 1, 1, 1, 1, 1};
 
-        for(int i = 1; i <= 6; i++)
+        System.out.println("\n______________________________");
+        System.out.println("|___PIZZA SLICES COMPLETED___|");
+        for(int i = 0; i < 6; i++)
         {
+            String pizzaSlice = "";
 
+            if(numPizzaSlicesMade[i] == 1)
+            {
+                switch(i)
+                {
+                    case 0: pizzaSlice = (i + 1) + ") Cheese Pizza Slice     "; break;
+                    case 1: pizzaSlice = (i + 1) + ") Meat Lovers Pizza Slice"; break;
+                    case 2: pizzaSlice = (i + 1) + ") Mushroom Pizza Slice   "; break;
+                    case 3: pizzaSlice = (i + 1) + ") Olive Pizza Slice      "; break;
+                    case 4: pizzaSlice = (i + 1) + ") Pineapple Pizza Slice  "; break;
+                    case 5: pizzaSlice = (i + 1) + ") Pepperoni Pizza Slice  "; break;
+                    default: System.out.println("Something went wrong in the endGame() method");
+                }
+
+                System.out.println("| " + pizzaSlice + " |");
+            }
+            else
+            {
+                pizzaSlice = (i + 1) + ")                        ";
+
+                System.out.println("| " + pizzaSlice + " |");
+            }
         }
+        System.out.println("|____________________________|");
+
+        System.out.println("\nPlease run this program again if you'd like to replay the game and attain all of the " +
+                           "mini-stories! \nThank you for playing :)");
+
+        System.out.println("\nGame Made By: Rana Ashour, Shambhavi Bhandari, Jackson ?, MD Islam, & Keyvan M. Kani");
     }
 
     //----ASCII METHODS---- (This section is where ASCII methods will be stored)
