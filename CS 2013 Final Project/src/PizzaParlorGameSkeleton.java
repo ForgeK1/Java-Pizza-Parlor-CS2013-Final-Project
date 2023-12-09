@@ -33,12 +33,12 @@ public class PizzaParlorGameSkeleton
         /*An array to keep track of the number of pizzas created by player. The size of the array will be 6
           and we will initialize all of the slots to 0. If the player completes a minigame for a specific slice,
           then we convert that slot to 1.
-            Index 0 -->
-            Index 1 -->
-            Index 2 -->
-            Index 3 -->
-            Index 4 -->
-            Index 5 -->
+            Index 0 --> Cheese Pizza Slice
+            Index 1 --> Meat Lovers Pizza Slice
+            Index 2 --> Mushroom Pizza Slice
+            Index 3 --> Olive Pizza Slice
+            Index 4 --> Pineapple Pizza Slice
+            Index 5 --> Pepperoni Pizza Slice
         */
         int[] numPizzaSlicesMade = {0, 0, 0, 0, 0, 0};
 
@@ -70,7 +70,7 @@ public class PizzaParlorGameSkeleton
         input.next().charAt(0);
 
         //A for loop to play 6 minigames and showcase each mini-story in sequence
-        for(int miniStory = 1; miniStory <= 6; miniStory++)
+        for(int miniStory = 0; miniStory < 6; miniStory++)
         {
             //System.out.println("\n--Loop ran--\n");
 
@@ -83,6 +83,9 @@ public class PizzaParlorGameSkeleton
             if(minigamePassed)
             {
                 showcaseMiniStory(miniStory);
+
+                //Converts pizza slot from 0 to 1 to indicate the pizza slice was created
+                numPizzaSlicesMade[miniStory] = 1;
             }
             else
             {
@@ -91,17 +94,12 @@ public class PizzaParlorGameSkeleton
                 /*Notes: Tell the player that they failed the minigame and did not make the intended pizza slice
                          --> They move on to making the next pizza slice. If its the last iteration, let them
                              know that this was their last pizza making session.*/
-                System.out.println("\nSadly, you have lost this minigame and didn't make the intended pizza slice :(");
-
-                if(miniStory == 6) {
-                    System.out.println("This was the last minigame and therefore was your FINAL" +
-                                       " pizza making session! ");
-                }
-                else {
-                    continue;
-                }
-
+                System.out.println("\nSadly, you have lost this minigame and didn't make the intended pizza " +
+                                   "slice :(\n");
             }
+
+            System.out.print("Input any letter to continue: ");
+            input.next();
         }
 
         /*A method that will congradulate the player on finishing the game, let them know the amount of
@@ -119,19 +117,19 @@ public class PizzaParlorGameSkeleton
                                        HungryCustomers minigame5, HungryCustomers minigame6)
     {
         //A switch statement to assign a boolean value from the intended minigame
-        switch (miniStory)
+        switch(miniStory)
         {
-            case 1:
+            case 0:
                 return minigame1.play();
-            case 2:
+            case 1:
                 return minigame2.play();
-            case 3:
+            case 2:
                 return minigame3.play();
-            case 4:
+            case 3:
                 return minigame4.play();
-            case 5:
+            case 4:
                 return minigame5.play();
-            case 6:
+            case 5:
                 return minigame6.play();
             default:
                 System.out.println("Something went wrong with the mini-story switch statement");
@@ -145,7 +143,6 @@ public class PizzaParlorGameSkeleton
     //A helper method to showcase the ministory for the minigame the player passed
     public static void showcaseMiniStory(int miniStory)
     {
-        Scanner input = new Scanner(System.in);
         //TO-DO CODE FOR MD
 
         /*Notes:
@@ -160,11 +157,11 @@ public class PizzaParlorGameSkeleton
         */
 
         switch (miniStory) {
-            case 1:
-                System.out.println("\n Mini-Story #" + miniStory);
+            case 0:
+                System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 cheesePizzaSlice();
-                System.out.println("\n Sarah was a diligent office worker at a big tech company that frequently visited"
+                System.out.println(" Sarah was a diligent office worker at a big tech company that frequently visited"
                         + " a local pizza parlor owned by Giovanni. \n" +
                         " Compared to her mundane nine-to-five job and not-so-enthusiastic boss," +
                         "\n she's always struck by the warm feel of the restaurant and the welcoming environment that" +
@@ -175,15 +172,13 @@ public class PizzaParlorGameSkeleton
                         " kindness.\n" +
                         " Before Sarah left, he gave her a free box of Cheese Pizza as a gratitude of appreciation.\n");
 
-                System.out.print("Enter any letter to continue with the next minigame: ");
-                String letter = input.next();
                 break;
 
-            case 2:
-                System.out.println("\n Mini-Story #" + miniStory);
+            case 1:
+                System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 meatLoversPizzaSlice();
-                System.out.println("\n Since that incident, Sarah always chats with Giovanni from time to time whenever"
+                System.out.println(" Since that incident, Sarah always chats with Giovanni from time to time whenever"
                         + " she visits the parlor to grab a slice of pizza after work.\n" +
                         " Through their interactions, she realizes Giovanni's passion for cooking aligns with her own" +
                         " interest in culinary arts.\n" +
@@ -192,14 +187,12 @@ public class PizzaParlorGameSkeleton
                         " They bond over their love for perfecting the art of pizza, and Sarah starts experimenting" +
                         " with" + " recipes at home, occasionally seeking advice from Giovanni.\n");
 
-                System.out.print("Enter any letter to continue with the next minigame: ");
-                String letter2 = input.next();
                 break;
-            case 3:
-                System.out.println("\n Mini-Story #" + miniStory);
+            case 2:
+                System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 mushroomPizzaSlice();
-                System.out.println("\n The parlor faced financial strains due to a burst water pipe that led to an" +
+                System.out.println(" The parlor faced financial strains due to a burst water pipe that led to an" +
                         " overflow of water which damaged the ovens that cooked the pizzas in the kitchen.\n" +
                         " Hearing this bad news from Giovanni, Sarah got the idea to hold a fundraiser night in order"+
                         " to lessen the financial burden on him.\n" +
@@ -211,14 +204,12 @@ public class PizzaParlorGameSkeleton
                         " Overall, the event was easily a success that led Giovanni more to a financial gain rather" +
                         " than a financial loss.\n");
 
-                System.out.print("Enter any letter to continue with the next minigame: ");
-                String letter3 = input.next();
                 break;
-            case 4:
-                System.out.println("\n Mini-Story #" + miniStory);
+            case 3:
+                System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 olivePizzaSlice();
-                System.out.println("\n While driving back from work and to her home on the highway," +
+                System.out.println(" While driving back from work and to her home on the highway," +
                         " Sarah would recount the memories that brought her joy in helping\n Giovanni cook pizzas and" +
                         " bring in her friends and family in preparation for that event.\n" +
                         " Such as creating numerous Italian pizzas, having social interactions with different folks" +
@@ -231,14 +222,12 @@ public class PizzaParlorGameSkeleton
                         " Seeping into unconsciousness from the impact, she hears the sounds of police sirens as they"+
                         " pass her to catch the drunk driver before passing out.\n");
 
-                System.out.print("Enter any letter to continue with the next minigame: ");
-                String letter4 = input.next();
                 break;
-            case 5:
-                System.out.println("\n Mini-Story #" + miniStory);
+            case 4:
+                System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 pineapplePizzaSlice();
-                System.out.println("\n Waking up, Sarah sees herself on a medical bed" +
+                System.out.println(" Waking up, Sarah sees herself on a medical bed" +
                         " at a nearby hospital located next" + " to the company she works at.\n" +
                         " To her left was Giovanni who was relieved to see her conscious again.\n" +
                         " To her right was the doctor who had been frequently checking on her for months at a time.\n" +
@@ -254,14 +243,12 @@ public class PizzaParlorGameSkeleton
                         " during those long months to ensure he could be there for Sarah revealing" +
                         " his unwavering care and concern for her.\n");
 
-                System.out.print("Enter any letter to continue with the next minigame: ");
-                String letter5 = input.next();
                 break;
-            case 6:
-                System.out.println("\n Mini-Story #" + miniStory);
+            case 5:
+                System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 pepperoniPizzaSlice();
-                System.out.println("\n After getting out of the hospital Giovanni offers" +
+                System.out.println(" After getting out of the hospital Giovanni offers" +
                         " her to come to his parlor since it would be a nice place to relax" +
                         " after all of the trouble" + " she went through with that crash.\n" +
                         " Entering the door, Sarah is suddenly surprised by her friends and family" +
@@ -276,7 +263,7 @@ public class PizzaParlorGameSkeleton
                         " Their friendship & love for one another grow stronger as they navigate" +
                         " the challenges and triumphs of running a thriving pizza business together.\n");
 
-                System.out.print("Congratulations! This was the last pizza making sesssion!: ");
+                System.out.print("Congratulations! This was the last pizza making sesssion!");
                 break;
             default:
                 System.out.println("Something went wrong :/ 404 ERROR");
