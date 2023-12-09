@@ -162,10 +162,10 @@ public class PizzaParlorGameSkeleton
                 System.out.println("-----------------");
                 cheesePizzaSlice();
                 System.out.println(" Sarah was a diligent office worker at a big tech company that frequently visited"
-                        + " a local pizza parlor owned by Giovanni. \n" +
+                        + " a local pizza\n parlor owned by Giovanni." +
                         " Compared to her mundane nine-to-five job and not-so-enthusiastic boss," +
                         "\n she's always struck by the warm feel of the restaurant and the welcoming environment that" +
-                        " makes her feel at home.\n" +
+                        " makes\n her feel at home." +
                         " One busy evening, Sarah notices the lack of workers at Giovanni’s local\n restaurant as he" +
                         " struggles to clear the tables for new customers who would want to enjoy his parlor.\n" +
                         " And so, she offers to help clear tables which led to Giovanni accepting her gesture of" +
@@ -179,12 +179,12 @@ public class PizzaParlorGameSkeleton
                 System.out.println("-----------------");
                 meatLoversPizzaSlice();
                 System.out.println(" Since that incident, Sarah always chats with Giovanni from time to time whenever"
-                        + " she visits the parlor to grab a slice of pizza after work.\n" +
-                        " Through their interactions, she realizes Giovanni's passion for cooking aligns with her own" +
-                        " interest in culinary arts.\n" +
-                        " She asks him about pizza making, and he's thrilled to share tips and tricks of" +
-                        " Italian cuisine" + " and where he’d learned them from.\n" +
-                        " They bond over their love for perfecting the art of pizza, and Sarah starts experimenting" +
+                        + " she visits the parlor\n to grab a slice of pizza after work." +
+                        " Through their interactions, she realizes Giovanni's passion for cooking\n aligns with her own" +
+                        " interest in culinary arts." +
+                        " She asks him about pizza making, and he's thrilled to share\n tips and tricks of" +
+                        " Italian cuisine" + " and where he’d learned them from." +
+                        " They bond over their love for perfecting\n the art of pizza, and Sarah starts experimenting" +
                         " with" + " recipes at home, occasionally seeking advice from Giovanni.\n");
 
                 break;
@@ -193,15 +193,15 @@ public class PizzaParlorGameSkeleton
                 System.out.println("-----------------");
                 mushroomPizzaSlice();
                 System.out.println(" The parlor faced financial strains due to a burst water pipe that led to an" +
-                        " overflow of water which damaged the ovens that cooked the pizzas in the kitchen.\n" +
-                        " Hearing this bad news from Giovanni, Sarah got the idea to hold a fundraiser night in order"+
+                        " overflow of water\n which damaged the ovens that cooked the pizzas in the kitchen." +
+                        " Hearing this bad news from Giovanni,\n Sarah got the idea to hold a fundraiser night in order"+
                         " to lessen the financial burden on him.\n" +
                         " With her organizational skills and social network with her friends and family," +
-                        " she brought in a crowd of people to her\n community-building event to encourage folks to" +
+                        " she brought in a crowd\n of people to her community-building event to encourage folks to" +
                         " donate" + " funding for Giovanni’s parlor.\n" +
                         " From there, Giovanni had a set of several different Italian pizzas as accommodating food he"+
-                        " and Sarah helped cook together at his place beforehand.\n" +
-                        " Overall, the event was easily a success that led Giovanni more to a financial gain rather" +
+                        " and Sarah\n helped cook together at his place beforehand." +
+                        " Overall, the event was easily a success that led\n Giovanni more to a financial gain rather" +
                         " than a financial loss.\n");
 
                 break;
@@ -210,16 +210,16 @@ public class PizzaParlorGameSkeleton
                 System.out.println("-----------------");
                 olivePizzaSlice();
                 System.out.println(" While driving back from work and to her home on the highway," +
-                        " Sarah would recount the memories that brought her joy in helping\n Giovanni cook pizzas and" +
-                        " bring in her friends and family in preparation for that event.\n" +
-                        " Such as creating numerous Italian pizzas, having social interactions with different folks" +
-                        " she’s never met before,\n" +
-                        " and how big of a success the event was that led Giovanni to be more relaxed overall.\n" +
-                        " Lost in her thoughts, however, she suddenly got rear-ended by a" +
-                        " fast drunk driver from behind" + " who was going ninety miles per hour.\n" +
-                        " This sudden hit led to her steering wheel forcefully turning," +
-                        " causing her car to spin rapidly" + " to the right and crash into two other cars.\n" +
-                        " Seeping into unconsciousness from the impact, she hears the sounds of police sirens as they"+
+                        " Sarah would recount the memories\n that brought her joy in helping Giovanni cook pizzas and" +
+                        " bring in her friends and family in\n preparation for that event." +
+                        " Such as creating numerous Italian pizzas, having social interactions\n with different folks" +
+                        " she’s never met before," +
+                        " and how big of a success the event was that led\n Giovanni to be more relaxed overall." +
+                        " Lost in her thoughts, however, she suddenly got rear-ended\n by a" +
+                        " fast drunk driver from behind" + " who was going ninety miles per hour." +
+                        " This sudden hit led to her\n steering wheel forcefully turning," +
+                        " causing her car to spin rapidly" + " to the right and crash into two\n other cars." +
+                        " Seeping into unconsciousness from the impact, she hears the sounds of police\n sirens as they"+
                         " pass her to catch the drunk driver before passing out.\n");
 
                 break;
@@ -228,19 +228,19 @@ public class PizzaParlorGameSkeleton
                 System.out.println("-----------------");
                 pineapplePizzaSlice();
                 System.out.println(" Waking up, Sarah sees herself on a medical bed" +
-                        " at a nearby hospital located next" + " to the company she works at.\n" +
+                        " at a nearby hospital located next" + " to the company\n she works at." +
                         " To her left was Giovanni who was relieved to see her conscious again.\n" +
                         " To her right was the doctor who had been frequently checking on her for months at a time.\n" +
                         " After Sarah becomes fully conscious, the doctor lets her know that" +
-                        " she has fallen" + " into a coma for the past three months\n" +
-                        " The doctor further added that she doesn’t have any bone-fracturing" +
-                        " injuries as most of the issue lies in the severe\n head injury the brain received from the"+
+                        " she has fallen" + " into a coma\n for the past three months." +
+                        " The doctor further added that she doesn’t have any bone-fracturing\n" +
+                        " injuries as most of the issue lies in the severe head injury the brain received from the"+
                         " fatal car crash.\n" + " Knowing that Sarah would be alright," +
                         " she would be out of the hospital" + " in the next two weeks.\n" +
                         " During those two weeks, she makes a funny joke about how Giovanni sees her every single day"+
-                        " even though the doctor said that she would be totally fine.\n" +
-                        " As they share a laugh, Giovanni reveals a touching truth—he halted his pizza parlor business\n"+
-                        " during those long months to ensure he could be there for Sarah revealing" +
+                        " even though\n the doctor said that she would be totally fine." +
+                        " As they share a laugh, Giovanni reveals a touching\n truth—he halted his pizza parlor business"+
+                        " during those long months to ensure he could be there for\n Sarah, revealing" +
                         " his unwavering care and concern for her.\n");
 
                 break;
@@ -249,18 +249,18 @@ public class PizzaParlorGameSkeleton
                 System.out.println("-----------------");
                 pepperoniPizzaSlice();
                 System.out.println(" After getting out of the hospital Giovanni offers" +
-                        " her to come to his parlor since it would be a nice place to relax" +
-                        " after all of the trouble" + " she went through with that crash.\n" +
-                        " Entering the door, Sarah is suddenly surprised by her friends and family" +
+                        " her to come to his parlor since it would be a nice\n place to relax" +
+                        " after all of the trouble" + " she went through with that crash." +
+                        " Entering the door, Sarah is\n suddenly surprised by her friends and family" +
                         " along with the party decorations all around the parlor.\n" +
                         " Giovanni explains to her that he threw a surprise party through" +
-                        " her family to celebrate that she came out of the crash alright.\n" +
-                        " After partying for so long, Giovanni offers her a partnership in the pizza parlor" +
-                        " business to work together to make it thrive even more.\n" +
-                        " After much contemplation, she wholeheartedly accepts to leave her job and work with him.\n" +
+                        " her family to celebrate that she came\n out of the crash alright." +
+                        " After partying for so long, Giovanni offers her a partnership in the pizza\n parlor" +
+                        " business to work together to make it thrive even more." +
+                        " After much contemplation, she wholeheartedly\n accepts to leave her job and work with him." +
                         " They embark on a journey as co-owners, combining their" +
-                        " skills to expand the parlor's Italian pizza cuisine.\n" +
-                        " Their friendship & love for one another grow stronger as they navigate" +
+                        " skills\n to expand the parlor's Italian pizza cuisine." +
+                        " Their friendship & love for one another grow stronger as\n they navigate" +
                         " the challenges and triumphs of running a thriving pizza business together.\n");
 
                 System.out.print("Congratulations! This was the last pizza making sesssion!");
