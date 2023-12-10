@@ -1,7 +1,4 @@
-import Minigames.CardMatch;
-import Minigames.HungryCustomers;
-import Minigames.TicTacToe;
-import Minigames.WordScramble;
+import Minigames.*;
 
 import java.util.Scanner;
 
@@ -29,8 +26,9 @@ public class PizzaParlorGameSkeleton
         HungryCustomers minigame2 = new HungryCustomers(); // Keyvan
         CardMatch minigame3 = new CardMatch(3, 3); // Md
         WordScramble minigame4 = new WordScramble(); // Keyvan
-        HungryCustomers minigame5 = new HungryCustomers();
-        HungryCustomers minigame6 = new HungryCustomers();
+        SnakeGame minigame5 = new SnakeGame(); //Shambhavi and Rana
+        RockPaperScissors minigame6 = new RockPaperScissors(); //Shambhavi and Rana
+        HungryCustomers minigame7 = new HungryCustomers(); //Jackson
 
         /*An array to keep track of the number of pizzas created by player. The size of the array will be 6
           and we will initialize all of the slots to 0. If the player completes a minigame for a specific slice,
@@ -40,9 +38,10 @@ public class PizzaParlorGameSkeleton
             Index 2 --> Mushroom Pizza Slice
             Index 3 --> Olive Pizza Slice
             Index 4 --> Pineapple Pizza Slice
-            Index 5 --> Pepperoni Pizza Slice
+            Index 5 --> Margherita Pizza Slice (tomato)
+            Index 6 --> Pepperoni Pizza Slice
         */
-        int[] numPizzaSlicesMade = {0, 0, 0, 0, 0, 0};
+        int[] numPizzaSlicesMade = {0, 0, 0, 0, 0, 0, 0};
 
         //ASCII art of the title of the game
         asciiTitleOfGame(); System.out.println("\n*ASCII art of the title of the game goes here*");
@@ -72,14 +71,15 @@ public class PizzaParlorGameSkeleton
         input.next().charAt(0);
 
         //A for loop to play 6 minigames and showcase each mini-story in sequence
-        for(int miniStory = 0; miniStory < 6; miniStory++)
+        for(int miniStory = 0; miniStory < 7; miniStory++)
         {
             //System.out.println("\n--Loop ran--\n");
 
             /*Every minigame .play() method will return a True or False boolean value. So, we will keep track of
               that value, and we know that the player won the minigame if we receive a True value and vice-versa*/
             boolean minigamePassed = playMinigame(miniStory, minigame1, minigame2, minigame3,
-                                                             minigame4, minigame5, minigame6);
+                                                             minigame4, minigame5, minigame6,
+                                                             minigame7);
 
             //An if statement that checks if the player passed the minigame
             if(minigamePassed)
@@ -116,7 +116,8 @@ public class PizzaParlorGameSkeleton
     public static boolean playMinigame(int miniStory,
                                        TicTacToe minigame1, HungryCustomers minigame2,
                                        CardMatch minigame3, WordScramble minigame4,
-                                       HungryCustomers minigame5, HungryCustomers minigame6)
+                                       SnakeGame minigame5, RockPaperScissors minigame6,
+                                       HungryCustomers minigame7)
     {
         //A switch statement to assign a boolean value from the intended minigame
         switch(miniStory)
@@ -133,6 +134,8 @@ public class PizzaParlorGameSkeleton
                 return minigame5.play();
             case 5:
                 return minigame6.play();
+            case 6:
+                return minigame7.play();
             default:
                 System.out.println("Something went wrong with the mini-story switch statement");
         }
