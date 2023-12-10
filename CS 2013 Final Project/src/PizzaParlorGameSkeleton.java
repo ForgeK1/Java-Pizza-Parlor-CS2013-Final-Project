@@ -1,3 +1,4 @@
+import Minigames.CardMatch;
 import Minigames.HungryCustomers;
 import Minigames.TicTacToe;
 
@@ -23,9 +24,9 @@ public class PizzaParlorGameSkeleton
         Scanner input = new Scanner(System.in);
 
         //A section to keep our minigame instances
-        TicTacToe minigame1 = new TicTacToe();
-        HungryCustomers minigame2 = new HungryCustomers();
-        HungryCustomers minigame3 = new HungryCustomers();
+        TicTacToe minigame1 = new TicTacToe(); // Md
+        HungryCustomers minigame2 = new HungryCustomers(); // Keyvan
+        CardMatch minigame3 = new CardMatch(3, 3); // Md
         HungryCustomers minigame4 = new HungryCustomers();
         HungryCustomers minigame5 = new HungryCustomers();
         HungryCustomers minigame6 = new HungryCustomers();
@@ -113,7 +114,7 @@ public class PizzaParlorGameSkeleton
       minigame played*/
     public static boolean playMinigame(int miniStory,
                                        TicTacToe minigame1, HungryCustomers minigame2,
-                                       HungryCustomers minigame3, HungryCustomers minigame4,
+                                       CardMatch minigame3, HungryCustomers minigame4,
                                        HungryCustomers minigame5, HungryCustomers minigame6)
     {
         //A switch statement to assign a boolean value from the intended minigame
