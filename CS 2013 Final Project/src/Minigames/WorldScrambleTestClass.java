@@ -20,6 +20,6 @@ public class WorldScrambleTestClass
 
         WordScramble wordScramble = new WordScramble();
 
-        wordScramble.play();s
+        wordScramble.play();
     }
 }
