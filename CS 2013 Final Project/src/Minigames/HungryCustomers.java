@@ -19,6 +19,8 @@ import java.util.*;
 public class HungryCustomers
 {
     //1) Data Fields
+
+    //A variable to keep track of the player's number of lives
     private int numLives;
 
     //A Stack of every pizza tray in the minigame

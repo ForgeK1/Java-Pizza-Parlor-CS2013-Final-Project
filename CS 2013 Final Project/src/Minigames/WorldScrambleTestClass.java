@@ -1,5 +1,7 @@
 package Minigames;
 
+import java.util.Scanner;
+
 /*
     1) Class Name: WordScrambleTestClass
 
@@ -12,5 +14,12 @@ package Minigames;
  */
 public class WorldScrambleTestClass
 {
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
 
+        WordScramble wordScramble = new WordScramble();
+
+        wordScramble.play();s
+    }
 }

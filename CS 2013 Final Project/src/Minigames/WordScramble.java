@@ -3,6 +3,7 @@ package Minigames;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 
 /*
     1) Class Name: WordScramble
@@ -43,14 +44,25 @@ public class WordScramble
           the player could win to add to their total amount of points.*/
     private HashMap<String, Integer> setOfWords = new HashMap<>();
 
+    /*To loop through our list of words when printing it inside of the table we will show to the player,
+      we need to copy the keys to an array that will help us keep the set of words in order by the amount
+      of letters each word has*/
+    String[] setOfWordsArray;
+
     //A variable to keep track of the player's total amount of points
     private int totalPoints;
+
+    //A variable to keep track of the player's number of lives
+    private int numLives;
 
     //2) Constructors
 
     //Default Constructor
     public WordScramble()
     {
+        this.totalPoints = 0;
+        this.numLives = 3;
+
         //A Random instance to help choose a random set of letters
         Random random = new Random();
 
@@ -64,13 +76,82 @@ public class WordScramble
         */
         int setOfLettersChooser = random.nextInt(1, 6);
 
-        initializeSetOfLetters(setOfLettersChooser);
+//        initializeSetOfLetters(setOfLettersChooser);
+        this.setOfLetters = "AERTS";
 
         //A method to initialize our HashMap setOfWords based on the setOfLetters chosen
         initializeSetOfWords();
     }
 
     //3) Methods
+
+    public boolean play()
+    {
+        //A scanner to allow input for the player
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\n----------------------------------------");
+        System.out.println("|  Title of Minigame:  WORD SCRAMBLE!  |");
+        System.out.println("----------------------------------------");
+
+        System.out.println("\n*INSERT PROMPT HERE*");
+
+        //A while loop to print out table of words and prompt the player to input the correct words
+        while(!this.setOfWords.isEmpty())
+        {
+            System.out.println("\n---------------------------");
+            System.out.println("Set of letters given: " + this.setOfLetters);
+            System.out.println("---------------------------");
+
+            //A inner for loop to print out all of the words in the list
+            for(int listIndex = 0; listIndex < this.setOfWordsArray.length; listIndex++)
+            {
+                String word = "";
+
+                if(this.setOfWordsArray[listIndex].contains("#"))
+                {
+                    for(int wordIndex = 1; wordIndex < this.setOfWordsArray[listIndex].length(); wordIndex++)
+                    {
+                        word += "#";
+                    }
+
+                    System.out.println((listIndex + 1) + ") " + word);
+                }
+                else
+                {
+                    System.out.println((listIndex + 1) + ") " + this.setOfWordsArray[listIndex]);
+                }
+            }
+
+            System.out.println("\n--> Total number of points: " + this.totalPoints);
+            System.out.println("--> Number of lives: " + this.numLives);
+
+            System.out.print("\nGuess a word given the letters!: ");
+            String userInput = "#" + input.next().toUpperCase();
+
+            if(this.setOfWords.containsKey(userInput))
+            {
+                this.totalPoints += this.setOfWords.get(userInput);
+
+                this.setOfWords.remove(userInput, this.setOfWords.get(userInput));
+
+                for(int i = 0; i < this.setOfWordsArray.length; i++)
+                {
+                    if(this.setOfWordsArray[i].equals(userInput))
+                    {
+                        System.out.println("This if statement runs");
+
+                        this.setOfWordsArray[i] = userInput.substring(1);
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        //Returning true indicates that we passed the minigame!
+        return true;
+    }
 
     //A method to choose the set of letters for the player based on the random number given in the constructor
     public void initializeSetOfLetters(int setOfLettersChooser)
@@ -91,16 +172,19 @@ public class WordScramble
     {
         if(this.setOfLetters == "AERTS")
         {
-            this.setOfWords.put("SET", 5);
-            this.setOfWords.put("TAR", 5);
-            this.setOfWords.put("EAR", 5);
-            this.setOfWords.put("ERA", 5);
-            this.setOfWords.put("REST", 10);
-            this.setOfWords.put("TEAR", 10);
-            this.setOfWords.put("SEAR", 10);
-            this.setOfWords.put("RATE", 10);
-            this.setOfWords.put("STARE", 20);
-            this.setOfWords.put("TEARS", 20);
+            this.setOfWords.put("#SET", 5);
+            this.setOfWords.put("#RAT", 5);
+            this.setOfWords.put("#EAR", 5);
+            this.setOfWords.put("#ERA", 5);
+            this.setOfWords.put("#REST", 10);
+            this.setOfWords.put("#TEAR", 10);
+            this.setOfWords.put("#SEAR", 10);
+            this.setOfWords.put("#RATE", 10);
+            this.setOfWords.put("#STARE", 20);
+            this.setOfWords.put("#TEARS", 20);
+
+            setOfWordsArray = new String[]{"#SET", "#RAT", "#EAR", "#ERA", "#REST",
+                                           "#TEAR", "#SEAR", "#RATE", "#STARE", "#TEARS"};
         }
         else if(this.setOfLetters == "LOVES")
         {
