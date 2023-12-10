@@ -1,6 +1,7 @@
 import Minigames.CardMatch;
 import Minigames.HungryCustomers;
 import Minigames.TicTacToe;
+import Minigames.WordScramble;
 
 import java.util.Scanner;
 
@@ -27,7 +28,7 @@ public class PizzaParlorGameSkeleton
         TicTacToe minigame1 = new TicTacToe(); // Md
         HungryCustomers minigame2 = new HungryCustomers(); // Keyvan
         CardMatch minigame3 = new CardMatch(3, 3); // Md
-        HungryCustomers minigame4 = new HungryCustomers();
+        WordScramble minigame4 = new WordScramble(); // Keyvan
         HungryCustomers minigame5 = new HungryCustomers();
         HungryCustomers minigame6 = new HungryCustomers();
 
@@ -114,7 +115,7 @@ public class PizzaParlorGameSkeleton
       minigame played*/
     public static boolean playMinigame(int miniStory,
                                        TicTacToe minigame1, HungryCustomers minigame2,
-                                       CardMatch minigame3, HungryCustomers minigame4,
+                                       CardMatch minigame3, WordScramble minigame4,
                                        HungryCustomers minigame5, HungryCustomers minigame6)
     {
         //A switch statement to assign a boolean value from the intended minigame
