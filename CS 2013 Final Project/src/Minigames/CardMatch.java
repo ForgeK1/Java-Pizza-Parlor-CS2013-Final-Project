@@ -108,13 +108,13 @@ public class CardMatch {
                 if(isSpotOpen(rowChoice1, colChoice1)) {
                     // every time the placeMove() method is called the letter is removed from the arraylist
                     placeMove(rowChoice1, colChoice1);
-                    System.out.println("LETTERS " + this.randomLetters);
+                    System.out.println("LETTERS: " + this.randomLetters);
                     numGuesses++;
                     display();
                 }
                 else {
                     System.out.println("~~ Spot is already taken! ~~");
-                    System.out.println("LETTERS " + this.randomLetters);
+                    System.out.println("LETTERS: " + this.randomLetters);
                     System.out.println();
                     continue;
                 }
