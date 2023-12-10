@@ -1,4 +1,5 @@
 package Minigames;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /*
@@ -18,12 +19,7 @@ import java.util.Scanner;
  */
 public class CardMatch {
     Scanner input = new Scanner(System.in);
-
-    // contains each character twice in the array
-    private char[] randomCharacters = {'A', 'B', 'C', 'D',
-            'E', 'F', 'G', 'H',
-            'A', 'B', 'C', 'D',
-            'E', 'F', 'G', 'H'};
+    private ArrayList<Character> randomLetters = new ArrayList<>();
     private Node head;
     private Node lastRowHead;
     private int numRows;
@@ -34,6 +30,7 @@ public class CardMatch {
     public CardMatch(int numRows, int numCols) {
         this.numRows = numRows;
         this.numCols = numCols;
+        fillArrayList();
 
         this.head = new Node('_');
         this.lastRowHead = this.head;
@@ -51,29 +48,122 @@ public class CardMatch {
         }
 
     }
-    public void play() {
-        // keeps running until the player exceeds the guess limit
-        while(numGuesses < GUESS_LIMIT) {
-            try {
-                System.out.print("Pick a row: ");
-                int rowChoice = input.nextInt();
-                System.out.print("Pick a column: ");
-                int colChoice = input.nextInt();
+    private void fillArrayList() {
+        this.randomLetters.add('A');
+        this.randomLetters.add('B');
+        this.randomLetters.add('C');
 
-                if((rowChoice > this.numRows || rowChoice <= 0) || (colChoice > this.numCols || colChoice <= 0)) {
+        this.randomLetters.add('A');
+        this.randomLetters.add('B');
+        this.randomLetters.add('C');
+
+    }
+    private void resetGridSpot(int row, int col) {
+        Node gridLocation = this.head;
+
+        for(int r = 1; r < row; r++) {
+            gridLocation = gridLocation.nextRow;
+        }
+        for(int c = 1; c < col; c++) {
+            gridLocation = gridLocation.nextCol;
+        }
+        // This method will reset the given grid location
+        // on the board if the player fails to match the letter twice
+        gridLocation.setCharacter('_');
+    }
+    private char getNodeChar(int row, int col) {
+        Node gridLocation = this.head;
+
+        for(int r = 1; r < row; r++) {
+            gridLocation = gridLocation.nextRow;
+        }
+        for(int c = 1; c < col; c++) {
+            gridLocation = gridLocation.nextCol;
+        }
+
+        return gridLocation.getCharacter();
+    }
+    public boolean play() {
+        System.out.println("\n------------------------------------");
+        System.out.println("| Title of Minigame: CARD MATCH! |");
+        System.out.println("------------------------------------");
+        display();
+        // keeps running until the player exceeds the guess limit
+        while((numGuesses < GUESS_LIMIT && !allSpotsFilled()) && !this.randomLetters.isEmpty()) {
+            try {
+                // ============================FIRST INPUT==================================
+                System.out.println("Number of guesses: " + numGuesses);
+                // 1st input for letter
+                System.out.print("Pick a row: ");
+                int rowChoice1 = input.nextInt();
+                System.out.print("Pick a column: ");
+                int colChoice1 = input.nextInt();
+                // an edge case to check if the player enters an out of bounds grid location
+                if((rowChoice1 > this.numRows || rowChoice1 <= 0) || (colChoice1 > this.numCols || colChoice1 <= 0)) {
                     System.out.println("~~ Please enter a valid location on the grid! ~~");
+                    display();
                     continue;
                 }
 
-                if(isSpotOpen(rowChoice, colChoice)) {
-                    placeMove(rowChoice, colChoice);
+                if(isSpotOpen(rowChoice1, colChoice1)) {
+                    // every time the placeMove() method is called the letter is removed from the arraylist
+                    placeMove(rowChoice1, colChoice1);
                     numGuesses++;
                     display();
                 }
                 else {
                     System.out.println("~~ Spot is already taken! ~~");
                     System.out.println();
+                    continue;
                 }
+                // ============================SECOND INPUT====================================
+                // 2nd input for letter to check if it matches the first input
+                System.out.print("Pick a row: ");
+                int rowChoice2 = input.nextInt();
+                System.out.print("Pick a column: ");
+                int colChoice2 = input.nextInt();
+                // an edge case to check if the player enters an out of bounds grid location
+                if((rowChoice1 > this.numRows || rowChoice1 <= 0) || (colChoice1 > this.numCols || colChoice1 <= 0)) {
+                    System.out.println("~~ Please enter a valid location on the grid! ~~");
+                    display();
+                    continue;
+                }
+
+                if(isSpotOpen(rowChoice2, colChoice2)) {
+                    // every time the placeMove() method is called the letter is removed from the arraylist
+                    placeMove(rowChoice2, colChoice2);
+                    // check if the previous letter and the latest letter match, if they do, then continue with the
+                    // updated board filled with the letters
+                    char letter1 = getNodeChar(rowChoice1, colChoice1);
+                    char letter2 = getNodeChar(rowChoice2, colChoice2);
+
+                    if(letter1 == letter2) {
+                        display();
+                        System.out.println("Correct! You have matched the letter!");
+                    }
+                    else {
+                        display();
+                        System.out.println("Nope! Not the same letter!");
+                        // add the letters back so that the they don't get removed from the arraylist everytime
+                        // the placeMove() method is called
+                        this.randomLetters.add(letter1);
+                        this.randomLetters.add(letter2);
+                        // reset the board back to the original board since the letters didn't match
+                        resetGridSpot(rowChoice1, colChoice1);
+                        resetGridSpot(rowChoice2, colChoice2);
+                        display();
+                    }
+                }
+                else {
+                    System.out.println("~~ Spot is already taken! ~~");
+                    resetGridSpot(rowChoice1, colChoice1);
+                    System.out.println();
+
+                    display();
+                    continue;
+                }
+
+                // ================================================================
             }
             catch (InputMismatchException ime) {
                 input.next();
@@ -85,6 +175,32 @@ public class CardMatch {
             }
 
         }
+        // IF THE ARRAYLIST IS EMPTY, THAT MEANS THE PLAYER HAS GUESSED ALL THE LETTERS TWICE IN THE BOARD
+        // AND HAVE BEEN REMOVED
+        if(this.randomLetters.isEmpty()) {
+            System.out.println("Congratulations! You have won this minigame!");
+            return true;
+        }
+        else {
+            System.out.println("Better luck next time...");
+        }
+
+        return false;
+    }
+    private boolean allSpotsFilled() {
+        Node currRow = this.head;
+
+        while(currRow != null) {
+            Node currCol = currRow;
+            while(currCol != null) {
+                if(currCol.getCharacter() == '_') {
+                    return false;
+                }
+                currCol = currCol.nextCol;
+            }
+            currRow = currRow.nextRow;
+        }
+        return true;
     }
     private void placeMove(int row, int col) {
         Node gridLocation = this.head;
@@ -95,8 +211,9 @@ public class CardMatch {
         for(int c = 1; c < col; c++) {
             gridLocation = gridLocation.nextCol;
         }
-        int randomCharIndex = (int)(Math.random() * this.randomCharacters.length);
-        gridLocation.setCharacter(this.randomCharacters[randomCharIndex]);
+        int randomCharIndex = (int)(Math.random() * this.randomLetters.size());
+        gridLocation.setCharacter(this.randomLetters.get(randomCharIndex));
+        this.randomLetters.remove(randomCharIndex);
     }
     private void addLastRow() {
         if(this.numRows == 0) {
