@@ -108,11 +108,13 @@ public class CardMatch {
                 if(isSpotOpen(rowChoice1, colChoice1)) {
                     // every time the placeMove() method is called the letter is removed from the arraylist
                     placeMove(rowChoice1, colChoice1);
+                    System.out.println("LETTERS " + this.randomLetters);
                     numGuesses++;
                     display();
                 }
                 else {
                     System.out.println("~~ Spot is already taken! ~~");
+                    System.out.println("LETTERS " + this.randomLetters);
                     System.out.println();
                     continue;
                 }
@@ -148,6 +150,7 @@ public class CardMatch {
                         // the placeMove() method is called
                         this.randomLetters.add(letter1);
                         this.randomLetters.add(letter2);
+                        System.out.println("LETTERS: " + this.randomLetters);
                         // reset the board back to the original board since the letters didn't match
                         resetGridSpot(rowChoice1, colChoice1);
                         resetGridSpot(rowChoice2, colChoice2);
@@ -156,6 +159,8 @@ public class CardMatch {
                 }
                 else {
                     System.out.println("~~ Spot is already taken! ~~");
+                    System.out.println("LETTERS: " + this.randomLetters);
+                    this.randomLetters.add(getNodeChar(rowChoice1, colChoice1));
                     resetGridSpot(rowChoice1, colChoice1);
                     System.out.println();
 
