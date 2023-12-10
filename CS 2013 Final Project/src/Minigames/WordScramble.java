@@ -101,7 +101,33 @@ public class WordScramble
         System.out.println("|  Title of Minigame:  WORD SCRAMBLE!  |");
         System.out.println("----------------------------------------");
 
-        System.out.println("\n*INSERT PROMPT HERE*");
+        System.out.println("\n------------------------------------------------------------------------");
+        System.out.println("__DESCRIPTION__");
+        System.out.println("Welcome to Word Scramble! Get ready to exercise your word-making skills! \nYou'll be " +
+                           "presented with a set of random letters, and your goal is to \ncreate 10 words for each " +
+                           "set using only those letters. Be cautious, \nthough! You have 3 lives and for every word " +
+                           "you guess that isn't on the \nlist you'll lose a life.");
+
+        System.out.println("\nBut here's the twist: for every word you correctly guess from the \nprovided letters, " +
+                           "you'll earn points that will add to  your total \nscore. The longer the word, the more " +
+                           "points you'll receive *so you \nhave to acheive at least 50 points to win the game*.");
+
+        System.out.println("\n__EXAMPLE__");
+        System.out.println("1) Word 1 (3 letters) -->    5 points\n" +
+                           "2) Word 2 (3 letters) -->    5 points\n" +
+                           "3) Word 3 (3 letters) -->    5 points\n" +
+                           "4) Word 4 (3 letters) -->    5 points\n" +
+                           "5) Word 5 (4 letters) -->   10 points\n" +
+                           "6) Word 6 (4 letters) -->   10 points\n" +
+                           "7) Word 7 (4 letters) -->   10 points\n" +
+                           "8) Word 8 (4 letters) -->   10 points\n" +
+                           "9) Word 9 (5 letters) -->   20 points\n" +
+                           "10) Word 10 (5 letters) --> 20 points");
+
+        System.out.println("\nNote that, running out of lives doesn't mean you lose the game. It just \nmeans you " +
+                           "out of chances to guess a word from the list. With that being \nsaid, good luck! " +
+                           "[]~(￣▽￣)~*");
+        System.out.println("------------------------------------------------------------------------");
 
         //A while loop to print out table of words and prompt the player to input the correct words
         while(!this.setOfWords.isEmpty())
