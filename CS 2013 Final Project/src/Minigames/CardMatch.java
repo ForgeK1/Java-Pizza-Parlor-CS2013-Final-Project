@@ -160,6 +160,7 @@ public class CardMatch {
                 else {
                     System.out.println("~~ Spot is already taken! ~~");
                     System.out.println("LETTERS: " + this.randomLetters);
+
                     this.randomLetters.add(getNodeChar(rowChoice1, colChoice1));
                     resetGridSpot(rowChoice1, colChoice1);
                     System.out.println();
