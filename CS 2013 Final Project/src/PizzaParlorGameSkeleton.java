@@ -44,10 +44,10 @@ public class PizzaParlorGameSkeleton
         int[] numPizzaSlicesMade = {0, 0, 0, 0, 0, 0, 0};
 
         //ASCII art of the title of the game
-        asciiTitleOfGame(); System.out.println("\n*ASCII art of the title of the game goes here*");
+        asciiTitleOfGame();
 
         //An ASCII art showcasing a pizza parlor kitchen and a person standing next to a pizza-making station
-        asciiKitchen(); System.out.println("\n*ASCII art of the kitchen goes here*");
+        asciiKitchen();
 
         System.out.println("\n__DESCRIPTION OF THE GAME__");
         System.out.println("Welcome to the Pizza Parlor! You've been chosen by your renowned pizza parlor co-owner to " +
