@@ -273,7 +273,7 @@ public class PizzaParlorGameSkeleton
                         " They embark on a journey as co-owners, combining their" +
                         " skills to expand the parlor's Italian\n pizza cuisine." +
                         " Their friendship & love for one another grow stronger as they navigate\n" +
-                        " the challenges and triumphs of running a thriving pizza business together.");
+                        " the challenges and triumphs of running a thriving pizza business together.\n");
 
                 System.out.print("Congratulations! This was the last pizza making sesssion!\n");
                 break;
