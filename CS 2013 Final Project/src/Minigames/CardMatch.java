@@ -87,7 +87,15 @@ public class CardMatch {
         System.out.println("\n------------------------------------");
         System.out.println("| Title of Minigame: CARD MATCH! |");
         System.out.println("------------------------------------");
+        System.out.println("\n------------------------------------------------------------------------");
+        System.out.println("__DESCRIPTION__");
+        System.out.println("Welcome to Card Match! You will be given a set of letters (A-C),\nand the goal is to " +
+                "match each letter in the set twice on the board.\nYou are given 15 attempts, but don't let" +
+                " that number fool you.\nThis is an entirely luck-based game. Good luck, you'll need it...\n");
+
+        System.out.println("LETTERS: " + this.randomLetters + "\n");
         display();
+
         // keeps running until the player exceeds the guess limit
         while((numGuesses < GUESS_LIMIT && !allSpotsFilled()) && !this.randomLetters.isEmpty()) {
             try {
@@ -108,13 +116,14 @@ public class CardMatch {
                 if(isSpotOpen(rowChoice1, colChoice1)) {
                     // every time the placeMove() method is called the letter is removed from the arraylist
                     placeMove(rowChoice1, colChoice1);
-                    System.out.println("LETTERS: " + this.randomLetters);
+                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+
                     numGuesses++;
                     display();
                 }
                 else {
-                    System.out.println("~~ Spot is already taken! ~~");
-                    System.out.println("LETTERS: " + this.randomLetters);
+                    System.out.println("~~ Spot is already taken! Choose another location!~~");
+                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
                     System.out.println();
                     continue;
                 }
@@ -131,9 +140,10 @@ public class CardMatch {
                     continue;
                 }
 
-                if(isSpotOpen(rowChoice2, colChoice2)) {
+                if(isSpotOpen(rowChoice2, colChoice2) ) {
                     // every time the placeMove() method is called the letter is removed from the arraylist
                     placeMove(rowChoice2, colChoice2);
+                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
                     // check if the previous letter and the latest letter match, if they do, then continue with the
                     // updated board filled with the letters
                     char letter1 = getNodeChar(rowChoice1, colChoice1);
@@ -150,7 +160,7 @@ public class CardMatch {
                         // the placeMove() method is called
                         this.randomLetters.add(letter1);
                         this.randomLetters.add(letter2);
-                        System.out.println("LETTERS: " + this.randomLetters);
+                        System.out.println("\nLETTERS: " + this.randomLetters + "\n");
                         // reset the board back to the original board since the letters didn't match
                         resetGridSpot(rowChoice1, colChoice1);
                         resetGridSpot(rowChoice2, colChoice2);
@@ -158,11 +168,16 @@ public class CardMatch {
                     }
                 }
                 else {
-                    System.out.println("~~ Spot is already taken! ~~");
+                    /*
+                     decrement the value so that the turn doesn't count if the player
+                     chooses the same spot twice
+                     */
+                    numGuesses--;
+                    System.out.println("~~ Spot is already taken! Choose another location! ~~");
                     this.randomLetters.add(getNodeChar(rowChoice1, colChoice1));
                     resetGridSpot(rowChoice1, colChoice1);
-                    System.out.println("LETTERS: " + this.randomLetters);
-                    System.out.println();
+                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+                    //System.out.println();
 
                     display();
                     continue;
@@ -183,7 +198,7 @@ public class CardMatch {
         // IF THE ARRAYLIST IS EMPTY, THAT MEANS THE PLAYER HAS GUESSED ALL THE LETTERS TWICE IN THE BOARD
         // AND HAVE BEEN REMOVED
         if(this.randomLetters.isEmpty()) {
-            System.out.println("Congratulations! You have won this minigame!");
+            System.out.println("Congratulations! You have matched all the letters!");
             return true;
         }
         else {
