@@ -18,7 +18,7 @@ public class SnakeGameTestClass
     {
         Scanner input = new Scanner(System.in);
 
-       SnakeGame snakeGame = new SnakeGame();
+        SnakeGame snakeGame = new SnakeGame();
 
         snakeGame.play();
 

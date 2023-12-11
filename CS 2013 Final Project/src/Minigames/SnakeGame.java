@@ -26,8 +26,18 @@ public class SnakeGame {
             getUserInput();
             updateGame();
         }
+        // the updateGame() method can return true if the player has either won or has collided with itself or the wall.
+        // We know the player has won if they collected 3 apples AND the updateGame() method returns true.
+        // Without the the second conditon, the method will return true, but the player may have lost by colliding
+        // with itself or the wall.
+        if(updateGame() && applesEaten >= 3) {
+            System.out.println("Hooray! You have collected three apples!");
+            return true;
+        }
+        else {
+            System.out.println("Game Over! You lost.");
+        }
 
-        System.out.println("Game Over!");
         return false;
     }
 
@@ -45,7 +55,7 @@ public class SnakeGame {
         }
     }
 
-    private void updateGame() {
+    private boolean updateGame() {
         int[] newHead = Arrays.copyOf(snake.getFirst(), snake.getFirst().length);
 
         if ("W".equals(currentDirection)) {
@@ -60,7 +70,7 @@ public class SnakeGame {
 
         if (checkCollision(newHead)) {
             isGameOver = true;
-            return;
+            return isGameOver;
         }
 
         snake.addFirst(newHead);
@@ -72,9 +82,10 @@ public class SnakeGame {
         }
 
         if (applesEaten >= 3) { // Check for the win condition
-            System.out.println("You won! You ate 3 apples!");
             isGameOver = true;
+            return isGameOver;
         }
+        return false;
     }
 
     private void displayGame() {
