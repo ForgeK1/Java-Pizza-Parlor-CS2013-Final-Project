@@ -64,8 +64,10 @@ public class RockPaperScissors {
 
     // Check if the player's move is valid
     private static boolean isValidMove(String move) {
-        return move.equals("ROCK") || move.equals("PAPER") || move.equals("SCISSORS");
+        // Use case-insensitive comparison to check if the move is valid
+        return move.equalsIgnoreCase("ROCK") || move.equalsIgnoreCase("PAPER") || move.equalsIgnoreCase("SCISSORS");
     }
+    
 
     // Generate a random move for the computer
     private static String generateComputerMove() {
