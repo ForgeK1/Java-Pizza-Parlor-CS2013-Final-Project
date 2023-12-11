@@ -28,7 +28,7 @@ public class PizzaParlorGameSkeleton
         WordScramble minigame4 = new WordScramble(); // Keyvan
         SnakeGame minigame5 = new SnakeGame(); //Shambhavi and Rana
         RockPaperScissors minigame6 = new RockPaperScissors(); //Shambhavi and Rana
-        HungryCustomers minigame7 = new HungryCustomers(); //Jackson
+        NeedleInTheHaystack minigame7 = new NeedleInTheHaystack(); //Jackson
 
         /*An array to keep track of the number of pizzas created by player. The size of the array will be 6
           and we will initialize all of the slots to 0. If the player completes a minigame for a specific slice,
@@ -117,7 +117,7 @@ public class PizzaParlorGameSkeleton
                                        TicTacToe minigame1, HungryCustomers minigame2,
                                        CardMatch minigame3, WordScramble minigame4,
                                        SnakeGame minigame5, RockPaperScissors minigame6,
-                                       HungryCustomers minigame7)
+                                       NeedleInTheHaystack minigame7)
     {
         //A switch statement to assign a boolean value from the intended minigame
         switch(miniStory)

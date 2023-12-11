@@ -12,6 +12,7 @@ public class SnakeGame {
     private int[] meal = new int[2];
     private String currentDirection = "R";
     private boolean isGameOver = false;
+    private int applesEaten = 0; // New variable to track apples eaten
     private final Scanner userInputScanner = new Scanner(System.in);
 
     public SnakeGame() {
@@ -19,8 +20,6 @@ public class SnakeGame {
     }
 
     public boolean play() {
-
-        //if they won true, if they lost false - add 3 apples
 
         while (!isGameOver) {
             displayGame();
@@ -71,6 +70,11 @@ public class SnakeGame {
         } else {
             snake.removeLast();
         }
+
+        if (applesEaten >= 3) { // Check for the win condition
+            System.out.println("You won! You ate 3 apples!");
+            isGameOver = true;
+        }
     }
 
     private void displayGame() {
@@ -118,7 +122,6 @@ public class SnakeGame {
     }
 
     private void eatFood() {
+        applesEaten++;
     }
-
-
 }
