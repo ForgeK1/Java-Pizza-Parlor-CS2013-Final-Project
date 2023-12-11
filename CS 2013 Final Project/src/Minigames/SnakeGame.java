@@ -15,12 +15,13 @@ public class SnakeGame {
     private int applesEaten = 0; // New variable to track apples eaten
     private final Scanner userInputScanner = new Scanner(System.in);
 
+    // Constructor to initialize the game
     public SnakeGame() {
         initializeGame();
     }
 
+    // Main game loop
     public boolean play() {
-
         while (!isGameOver) {
             displayGame();
             getUserInput();
@@ -31,12 +32,14 @@ public class SnakeGame {
         return false;
     }
 
+    // Initialize the game state
     private void initializeGame() {
         snake = new LinkedList<>();
         snake.add(new int[]{BOARD_WIDTH / 2, BOARD_HEIGHT / 2});
         spawnMeal();
     }
 
+    // Get user input for the snake's movement direction
     private void getUserInput() {
         System.out.print("Enter move (WASD): ");
         String input = userInputScanner.nextLine().toUpperCase();
@@ -45,9 +48,11 @@ public class SnakeGame {
         }
     }
 
+    // Update the game state based on user input and current conditions
     private void updateGame() {
         int[] newHead = Arrays.copyOf(snake.getFirst(), snake.getFirst().length);
 
+        // Update the new head position based on the current direction
         if ("W".equals(currentDirection)) {
             newHead[1]--;
         } else if ("A".equals(currentDirection)) {
@@ -58,12 +63,16 @@ public class SnakeGame {
             newHead[0]++;
         }
 
+        // Check for collisions with walls or the snake itself
         if (checkCollision(newHead)) {
             isGameOver = true;
             return;
         }
 
+        // Update the snake's position
         snake.addFirst(newHead);
+
+        // Check if the snake has eaten the meal
         if (Arrays.equals(newHead, meal)) {
             eatFood();
             spawnMeal();
@@ -71,12 +80,14 @@ public class SnakeGame {
             snake.removeLast();
         }
 
-        if (applesEaten >= 3) { // Check for the win condition
+        // Check for the win condition
+        if (applesEaten >= 3) {
             System.out.println("You won! You ate 3 apples!");
             isGameOver = true;
         }
     }
 
+    // Display the current state of the game
     private void displayGame() {
         for (int y = 0; y < BOARD_HEIGHT; y++) {
             for (int x = 0; x < BOARD_WIDTH; x++) {
@@ -87,22 +98,25 @@ public class SnakeGame {
         }
     }
 
+    // Get the content of a cell based on its position
     private char getCellContent(int x, int y) {
         if (x == 0 || x == BOARD_WIDTH - 1 || y == 0 || y == BOARD_HEIGHT - 1) {
-            return '#';
+            return '#'; // Wall
         } else if (Arrays.equals(new int[]{x, y}, meal)) {
-            return '*';
+            return '*'; // Meal
         } else if (contains(snake, new int[]{x, y})) {
-            return 'O';
+            return 'O'; // Snake body
         } else {
-            return ' ';
+            return ' '; // Empty space
         }
     }
 
+    // Check for collisions with walls or the snake itself
     private boolean checkCollision(int[] newHead) {
         return newHead[0] < 0 || newHead[1] < 0 || newHead[0] >= BOARD_WIDTH || newHead[1] >= BOARD_HEIGHT || contains(snake, newHead);
     }
 
+    // Spawn a new meal at a random position
     private void spawnMeal() {
         Random random = new Random();
         meal[0] = random.nextInt(BOARD_WIDTH - 2) + 1;
@@ -112,6 +126,7 @@ public class SnakeGame {
         }
     }
 
+    // Check if a list contains a specific item
     private boolean contains(LinkedList<int[]> list, int[] item) {
         for (int[] element : list) {
             if (Arrays.equals(element, item)) {
@@ -121,6 +136,7 @@ public class SnakeGame {
         return false;
     }
 
+    // Increment the count of apples eaten
     private void eatFood() {
         applesEaten++;
     }
