@@ -1,5 +1,5 @@
 package Minigames;
-
+// Mini Game Made by: Shambhavi Bhandari & Rana Ashour
 import java.util.Scanner;
 
 /*
