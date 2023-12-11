@@ -275,7 +275,7 @@ public class PizzaParlorGameSkeleton
                         " Their friendship & love for one another grow stronger as they navigate\n" +
                         " the challenges and triumphs of running a thriving pizza business together.");
 
-                System.out.print("Congratulations! This was the last pizza making sesssion!");
+                System.out.print("Congratulations! This was the last pizza making sesssion!\n");
                 break;
             default:
                 System.out.println("Something went wrong :/ 404 ERROR");
