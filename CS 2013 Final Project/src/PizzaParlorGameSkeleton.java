@@ -276,6 +276,7 @@ public class PizzaParlorGameSkeleton
                         "\" the challenges and triumphs of running a thriving pizza business together.\\n\");");
 
                 System.out.print("Congratulations! This was the last pizza making sesssion!");
+                break;
             default:
                 System.out.println("Something went wrong :/ 404 ERROR");
         }
