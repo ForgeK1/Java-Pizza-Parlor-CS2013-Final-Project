@@ -261,7 +261,7 @@ public class PizzaParlorGameSkeleton
                         " Giovanni explains to her that he threw a surprise party through" +
                         " her family to celebrate that she came\n out of the crash alright." +
                         " After partying for so long, Giovanni offers her a partnership in the pizza\n parlor" +
-                        " business to work together to make it thrive even more.");
+                        " business to work together to make it thrive even more.\n");
 
                 break;
             case 6:
