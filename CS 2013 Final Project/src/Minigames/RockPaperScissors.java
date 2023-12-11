@@ -67,7 +67,7 @@ public class RockPaperScissors {
         // Use case-insensitive comparison to check if the move is valid
         return move.equalsIgnoreCase("ROCK") || move.equalsIgnoreCase("PAPER") || move.equalsIgnoreCase("SCISSORS");
     }
-    
+
 
     // Generate a random move for the computer
     private static String generateComputerMove() {
