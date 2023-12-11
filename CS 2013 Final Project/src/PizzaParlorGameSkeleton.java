@@ -268,12 +268,12 @@ public class PizzaParlorGameSkeleton
                 System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
                 // ASCII ART GOES HERE
-                System.out.println("\" After much contemplation, she wholeheartedly\\n accepts to leave her job" +
-                        " and work with him.\" +\n" +
-                        " \" They embark on a journey as co-owners, combining their\" +\n" +
-                        "\" skills\\n to expand the parlor's Italian pizza cuisine.\" +\n" +
-                        "\" Their friendship & love for one another grow stronger as\\n they navigate\" +\n" +
-                        "\" the challenges and triumphs of running a thriving pizza business together.\\n\");");
+                System.out.println("\n After much contemplation, she wholeheartedly\\n accepts to leave her job" +
+                        " and work with him.\n" +
+                        " They embark on a journey as co-owners, combining their\n" +
+                        " skills to expand the parlor's Italian pizza cuisine.\n" +
+                        " Their friendship & love for one another grow stronger as they navigate\n" +
+                        " the challenges and triumphs of running a thriving pizza business together;");
 
                 System.out.print("Congratulations! This was the last pizza making sesssion!");
                 break;
