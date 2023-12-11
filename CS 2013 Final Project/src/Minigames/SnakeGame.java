@@ -1,5 +1,7 @@
 package Minigames;
 
+
+// Mini Game Made by: Shambhavi Bhandari & Rana Ashour
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
