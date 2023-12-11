@@ -287,7 +287,7 @@ public class PizzaParlorGameSkeleton
 
         System.out.println("\nCongratulations, Champion of Pizza Quest! You've overcome the challenges, conquered " +
                            "the games, and emerged victorious. \nWhether you've mastered a single slice or crafted " +
-                           "the full six-slice masterpiece, your determination and skill have \npropelled you to " +
+                           "the full seven-slice masterpiece, your determination and skill have \npropelled you to " +
                            "the pinnacle of this culinary adventure. Your triumph signifies not just beating the " +
                            "game, but the \nresilience and spirit you've shown throughout this flavorful journey. " +
                            "You've savored the victories, relished the \nstories, and truly made this quest your " +
@@ -337,55 +337,185 @@ public class PizzaParlorGameSkeleton
     //A method that will display the title of the game with that will look cool (～￣▽￣)～
     public static void asciiTitleOfGame()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("      ________  ___  ________  ________  ________  ");
+        System.out.println("     |\\   __  \\|\\  \\|\\_____  \\|\\_____  \\|\\   __  \\");
+        System.out.println("     \\ \\  \\|\\  \\ \\  \\\\|___/  /|\\|___/  /\\ \\  \\|\\  \\");
+        System.out.println("      \\ \\   ____\\ \\  \\   /  / /    /  / /\\ \\   __  \\");
+        System.out.println("       \\ \\  \\___|\\ \\  \\ /  /_/__  /  /_/__\\ \\  \\ \\  \\");
+        System.out.println("        \\ \\__\\    \\ \\__\\\\________\\\\________\\ \\__\\ \\__\\");
+        System.out.println("         \\|__|     \\|__|\\|_______|\\|_______|\\|__|\\|__|");
+        System.out.println();
+        System.out.println();
+        System.out.println("      ________  ________  ________  ___       ________  ________ ");
+        System.out.println("     |\\   __  \\|\\   __  \\|\\   __  \\|\\  \\     |\\   __  \\|\\   __  \\");
+        System.out.println("     \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\    \\ \\  \\|\\  \\ \\  \\|\\  \\");
+        System.out.println("      \\ \\   ____\\ \\   __  \\ \\   _  _/ \\  \\    \\ \\  \\\\\\  \\ \\   _  _\\  ");
+        System.out.println("       \\ \\  \\___|\\ \\  \\ \\  \\ \\  \\\\  \\\\ \\  \\____\\ \\  \\\\\\  \\ \\  \\\\  \\|");
+        System.out.println("        \\ \\__\\    \\ \\__\\ \\__\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\__\\\\ _\\ ");
+        System.out.println("         \\|__|     \\|__|\\|__|\\|__|\\|__|\\|_______|\\|_______|\\|__|\\|__|");
+        System.out.println();
+        System.out.println();
+        System.out.println("            +-+ +-+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+  ");
+        System.out.println("            |A| |s|t|o|r|y| |a|b|o|u|t| |f|r|i|e|n|d|s|h|i|p|");
+        System.out.println("            +-+ +-+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+");
+        System.out.println("X---------------------------------------------------------------------------------X");
     }
 
     //A method that will showcase an ASCII art of the kitchen in the pizza parlor
     public static void asciiKitchen()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("X---------------------------------------------------------------------------------X");
+        System.out.println();
+        System.out.println("/|    |__I__I__I__I__I__I__I__I__I_|       _-                         |\\");
+        System.out.println("  | _- |_I__I__I__I__I__I__I__I__I__|-_                            _-   |");
+        System.out.println("  |    |__I__I__I__I__I__I__I__I__I_|                 _--               |");
+        System.out.println("  | -  |__I__I__I__I__I__I__I__I__I_|  -_ -                             |");
+        System.out.println("  |    |_I__I__I__I__I__I__I__I__I__|                                   |");
+        System.out.println("  |-_- /                            \\                        -         |");
+        System.out.println("  |   /                              \\    -_                           |");
+        System.out.println("  |  /                                \\                            -_  |");
+        System.out.println("  | /__________________________________\\                  -            |");
+        System.out.println("  | |__________________________________|                                |");
+        System.out.println("  |    |   _______________________   |     _-            -              |");
+        System.out.println("  |_-  |  |                       |  |                         _-       |");
+        System.out.println("  |    |  |                     _ |  |  T  T  T  T  T                   |");
+        System.out.println("  | _-_|  |    __.'`'`'`''`;__ /  |  |  |  |  |  |  |        _-     -   |");
+        System.out.println("  |    |  | _/U  `'.'.,.,\".'  U   |  |  | (_) |  |  |                  |");
+        System.out.println("  |    |  |   |               |   |  | / \\    @ [_]d b    _@_     |    |");
+        System.out.println("  |    |  |   |      `', `,   |   |  | |_|    ____         [ ]     |    |");
+        System.out.println("  |_-  |  |   |   `') ( )'    |   |  | ______\\__/_________[_]__   |    |");
+        System.out.println("  |    |  |   |____(,`)(,(____|   |  |/________________________\\  |    |");
+        System.out.println("  |    |  |  /|   `@@(@@)@)'  |\\  |  | ||            _____   ||   |    |");
+        System.out.println("  |    |  | //!\\  @@)@@)@@@( /!\\\\ |  | ||   _--      \\   /   ||  /|\\   |");
+        System.out.println("  |__lc|__|/_____________________\\|__|_||____________/###\\___||_|||||__|");
+        System.out.println(" / -_  _ -      _ -   _-_    -  _ - _ -|| -_    _  - \\___/_- || |||||-_ \\ ");
+        System.out.println();
+        System.out.println("X---------------------------------------------------------------------------------X");
     }
 
     //ASCII art of a cheese pizza slice for showcaseMiniStory() method
     public static void cheesePizzaSlice()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Cheese!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("        .'o O'-._");
+        System.out.println("       / O o_ .-`|");
+        System.out.println("      /O_.-'   O |");
+        System.out.println("      | o    o .-`");
+        System.out.println("      |o  O_.-'");
+        System.out.println("      '--`");
+        System.out.println("+----------------------------------------------+");
     }
 
     //ASCII art of a meat lovers pizza slice for showcaseMiniStory() method
     public static void meatLoversPizzaSlice()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Meat Lovers!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("    _____  ");
+        System.out.println("^..^     \\9");
+        System.out.println("(oo)_____/ ");
+        System.out.println("   WW  WW   ");
+        System.out.println();
+        System.out.println("    /\"\"\\      ,");
+        System.out.println("   <>^  L____/|");
+        System.out.println("    `) /`   , /");
+        System.out.println("     \\ `---' /");
+        System.out.println("      `'\";\\)`");
+        System.out.println("        _/_Y  ");
+        System.out.println();
+        System.out.println("           __n__n__");
+        System.out.println("    .------`-\\00/-'");
+        System.out.println("   /  ##  ## (oo)");
+        System.out.println("  / \\## __   ./");
+        System.out.println("     |//YY \\|/");
+        System.out.println("     |||   |||");
+        System.out.println("+----------------------------------------------+");
     }
 
     //ASCII art of a mushroom pizza slice for showcaseMiniStory() method
     public static void mushroomPizzaSlice()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Mushroom!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("         ___..._");
+        System.out.println("    _,--'       \"`-.\"");
+        System.out.println("  ,'.  .            \\");
+        System.out.println(",/:. .     .       .'");
+        System.out.println("|;..  .      _..--'");
+        System.out.println("`--:...-,-'\"\"\\");
+        System.out.println("        |:.  `.");
+        System.out.println("        l;.   l");
+        System.out.println("        `|:.   |");
+        System.out.println("        `|:.   |");
+        System.out.println("        .l;.    j, ");
+        System.out.println("     `. \\`;:.   //,/");
+        System.out.println("+----------------------------------------------+");
     }
 
     //ASCII art of a olive pizza slice for showcaseMiniStory() method
     public static void olivePizzaSlice()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Olives!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("          \\  ");
+        System.out.println("        (')(')");
+        System.out.println("       (')(')(')");
+        System.out.println("        (')(')");
+        System.out.println("          (')");
+        System.out.println("+----------------------------------------------+");
     }
 
     //ASCII art of a pineapple pizza slice for showcaseMiniStory() method
     public static void pineapplePizzaSlice()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Pineapple!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("          \\||/");
+        System.out.println("          \\||/");
+        System.out.println("        .<><><>.");
+        System.out.println("       .<><><><>.");
+        System.out.println("       '<><><><>'");
+        System.out.println("        '<><><>'");
+        System.out.println("+----------------------------------------------+");
     }
 
     //ASCII art of a pepperoni pizza slice for showcaseMiniStory() method
     public static void pepperoniPizzaSlice()
     {
-        //TO-DO CODE FOR RANA
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Pepperoni!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("       // \"\"--.._");
+        System.out.println("       ||  (_)  _ \"-._");
+        System.out.println("       ||    _ (_)    '-.");
+        System.out.println("       ||   (_)   __..-'");
+        System.out.println("        \\\\__..--\"\"\n");
+        System.out.println("+----------------------------------------------+");
     }
 
     //ASCII art of a pizza tray full of pizza slices for the endOfGame() method
     public static void pizzaTray()
     {
-        //TO-DO CODE FOR RANA
+
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Pizza Tray Complete!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("             _.:`.--|--.`:._");
+        System.out.println("          .: .'\\o  | o /'. '.");
+        System.out.println("         // '.  \\ o|  /  o '.\\");
+        System.out.println("        //'._o'. \\ |o/ o_.-'o\\\\");
+        System.out.println("        || o '-.'.\\|/.-' o   ||");
+        System.out.println("        \\\\'._o'. / |o\\ o_.-'o//");
+        System.out.println("         \\\\ '.  / o|  \\  o '//");
+        System.out.println("          .: .'/o  | o \\'. '.");
+        System.out.println("            -:.,.__|__.,.:-");
+        System.out.println("+----------------------------------------------+");
     }
 }
 
