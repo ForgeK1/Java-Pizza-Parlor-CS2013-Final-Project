@@ -19,19 +19,21 @@ public class SnakeGame {
 
     // Constructor to initialize the game
     // Constructor to initialize the game
-    public SnakeGame() {
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("Welcome to the Snake Game! Win 3 apples without colliding with yourself or the walls to win the game!");
-        initializeGame();
-    }
 
     // Main game loop
+    // Main game loop
     public boolean play() {
+        System.out.println("\n------------------------------------------------------------------");
+        System.out.println("Welcome to the Snake Game! Win 3 apples without colliding with yourself or the walls to win the game!");
+
+        initializeGame(); // Moved initialization to play method
+
         while (!isGameOver) {
             displayGame();
             getUserInput();
             updateGame();
         }
+
         // the updateGame() method can return true if the player has either won or has collided with itself or the wall.
         // We know the player has won if they collected 3 apples AND the updateGame() method returns true.
         // Without the second conditon, the method will return true, but the player may have lost by colliding
