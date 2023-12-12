@@ -253,7 +253,7 @@ public class PizzaParlorGame
             case 5:
                 System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
-                pepperoniPizzaSlice();
+                margheritaPizzaSlice();
                 System.out.println(" After getting out of the hospital Giovanni offers" +
                         " her to come to his parlor since it would be a nice\n place to relax" +
                         " after all of the trouble" + " she went through with that crash." +
@@ -268,7 +268,7 @@ public class PizzaParlorGame
             case 6:
                 System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
-                margheritaPizzaSlice();
+                pepperoniPizzaSlice();
                 System.out.println("\n After much contemplation, she wholeheartedly accepts to leave her job" +
                         " and work with him.\n" +
                         " They embark on a journey as co-owners, combining their" +
