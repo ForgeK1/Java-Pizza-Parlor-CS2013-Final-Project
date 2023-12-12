@@ -13,7 +13,7 @@ public class RockPaperScissors {
     // Method to play the Rock, Paper, Scissors game
     public boolean play() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("------------------------------------");
+        System.out.println("\n------------------------------------");
 
         // Display welcome and game rules
         System.out.println("Welcome to Rock, Paper, Scissors Game!");

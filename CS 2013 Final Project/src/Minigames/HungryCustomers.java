@@ -110,7 +110,7 @@ public class HungryCustomers
             }
 
             //Shows ASCII art of customer. Note: There will be 4 different ASCII art customers
-            System.out.println("**Insert ASCII Art of customer**");
+            asciiCustomer();
 
             System.out.println("\nCustomer: \"Hi! I would like a " + requestedPizzaSlice + " please!\"");
 
@@ -130,8 +130,6 @@ public class HungryCustomers
                     there are 6 customers for every 6 slices in each pizza tray*/
             if(chosenPizzaSliceByPlayer == customer)
             {
-                System.out.println("\n**Insert ASCII ART of Pizza Slice chosen**");
-
                 System.out.println("\nCustomer: \"Mmmmm delicius! Thank you for this " + requestedPizzaSlice +
                                    "! :P");
 
@@ -167,8 +165,6 @@ public class HungryCustomers
             //If the number of lives drops to 0, we return false which means they lose the minigame
             if(numLives == 0)
             {
-                System.out.println("\n**ASCII ART showing a GAME OVER Screen**");
-
                 System.out.println("\nYour customers were unhappy! You lost all of your lives and now you " +
                                    "you went out \nof business! X_X");
 
@@ -178,8 +174,6 @@ public class HungryCustomers
 
         /*If we pass the while loop above, it indicates that the player gave out all of their pizza slices and that
           they won the minigame!*/
-        System.out.println("\n**ASCII ART showing a GAME WON Screen**");
-
         System.out.println("\nAll of your customers are happy! You gave out all of the pizzas you had for the \nday " +
                            "and you recieved maximum customer satisfaction. ^0^");
 
@@ -243,6 +237,88 @@ public class HungryCustomers
                 this.listOfCustomers.add(4);
                 maxPineappleSlices++;
             }
+        }
+    }
+
+    //A method that will print out a random ASCII art of a customer
+    public void asciiCustomer()
+    {
+        Random random = new Random();
+
+        int pickRandomCustomerAscii = random.nextInt(1, 5);
+
+        //Creates space to print ASCII of customer
+        System.out.println();
+
+        if(pickRandomCustomerAscii == 1)
+        {
+            //Customer 1
+            System.out.println("                    _,,,_");
+            System.out.println("                  .'     `'.");
+            System.out.println("                 /     ____ \\");
+            System.out.println("                |    .'_  _\\/");
+            System.out.println("                /    ) a  a|");
+            System.out.println("               /    (    > |");
+            System.out.println("              (      ) ._  /");
+            System.out.println("              )    _/-.__.'`\\");
+            System.out.println("             (  .-'`-.   \\__ )");
+            System.out.println("              `/      `-./  `.");
+            System.out.println("               |    \\      \\  \\");
+            System.out.println("               |     \\   \\  \\  \\");
+            System.out.println("               |\\     `. /  /   \\");
+            System.out.println();
+        }
+        else if(pickRandomCustomerAscii == 2)
+        {
+            //customer 2
+            System.out.println("              ,,,,");
+            System.out.println("             /   '");
+            System.out.println("            /.. /");
+            System.out.println("           ( c  D");
+            System.out.println("            \\- '\\_");
+            System.out.println("             `-'\\)\\");
+            System.out.println("                |_ \\");
+            System.out.println("                |U \\\\");
+            System.out.println("               (__,//");
+            System.out.println("               |. \\/");
+            System.out.println("               LL__I");
+            System.out.println("                |||");
+            System.out.println("                |||");
+            System.out.println("             ,,-``'\\ ");
+        }
+        else if(pickRandomCustomerAscii == 3)
+        {
+            //customer 3
+            System.out.println("                   __");
+            System.out.println("                 .'  `'.");
+            System.out.println("                /  _    |");
+            System.out.println("                #_/.\\==/.\\");
+            System.out.println("               (, \\_/ \\\\_/");
+            System.out.println("                |    -' |");
+            System.out.println("                \\   '=  /");
+            System.out.println("                /`-.__.'");
+            System.out.println("             .-'`-.___|__");
+            System.out.println("            /    \\       `.");
+            System.out.println();
+        }
+        else
+        {
+            //customer 4
+            System.out.println("         |><|~|><|");
+            System.out.println("         /(((9)))\\");
+            System.out.println("        //) o_o  (\\\\");
+            System.out.println("       (((( ._. ))))");
+            System.out.println("        ))))---((((");
+            System.out.println("       ((((`---'))))");
+            System.out.println("      (___|xXxXx|___)");
+            System.out.println("        \\ |     | /");
+            System.out.println("         / ^ ^ ^ \\");
+            System.out.println("        /         \\");
+            System.out.println("       (_._._._._._)");
+            System.out.println("          \\  |  /");
+            System.out.println("           | | |");
+            System.out.println("           |-|-|");
+            System.out.println("         (__,^.__)");
         }
     }
 }
