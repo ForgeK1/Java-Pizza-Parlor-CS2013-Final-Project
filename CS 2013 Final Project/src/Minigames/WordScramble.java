@@ -79,8 +79,6 @@ public class WordScramble
         */
         int setOfLettersChooser = random.nextInt(1, 6);
 
-        System.out.println(setOfLettersChooser);
-
         initializeSetOfLetters(setOfLettersChooser);
 
         //A method to initialize our HashMap setOfWords & setOfWordsArray based on the setOfLetters chosen
