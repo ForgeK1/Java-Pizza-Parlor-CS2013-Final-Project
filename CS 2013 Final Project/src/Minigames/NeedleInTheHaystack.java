@@ -77,7 +77,7 @@ public class NeedleInTheHaystack {
     public boolean play() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("-------------------------- \n" +
+        System.out.println("\n-------------------------- \n" +
                 "|"  + "\u001B[34m"  + "Needle in the Haystack" + "\u001B[0m" + "|\n"+
                 "--------------------------");
 

@@ -100,8 +100,11 @@ public class PizzaParlorGameSkeleton
                                    "slice :(\n");
             }
 
-            System.out.print("Input any letter to continue: ");
-            input.next();
+            if(miniStory != 6)
+            {
+                System.out.print("Input any letter to continue: ");
+                String userInput = input.next();
+            }
         }
 
         /*A method that will congradulate the player on finishing the game, let them know the amount of
@@ -290,7 +293,7 @@ public class PizzaParlorGameSkeleton
     */
     public static void endOfGame(int[] numPizzaSlicesMade)
     {
-        pizzaTray(); System.out.println("\n*INSERT ASCII ART OF PIZZA TRAY*");
+        pizzaTray();
 
         System.out.println("\nCongratulations, Champion of Pizza Quest! You've overcome the challenges, conquered " +
                            "the games, and emerged victorious. \nWhether you've mastered a single slice or crafted " +
@@ -510,7 +513,7 @@ public class PizzaParlorGameSkeleton
     public static void pizzaTray()
     {
 
-        System.out.println("+----------------------------------------------+");
+        System.out.println("\n+----------------------------------------------+");
         System.out.println("               Pizza Tray Complete!");
         System.out.println("+----------------------------------------------+");
         System.out.println("             _.:`.--|--.`:._");
