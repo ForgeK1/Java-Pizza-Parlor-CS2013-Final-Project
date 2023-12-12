@@ -306,7 +306,7 @@ public class PizzaParlorGame
 
         System.out.println("\n______________________________");
         System.out.println("|___PIZZA SLICES COMPLETED___|");
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 7; i++)
         {
             String pizzaSlice = "";
 
@@ -319,7 +319,8 @@ public class PizzaParlorGame
                     case 2: pizzaSlice = (i + 1) + ") Mushroom Pizza Slice   "; break;
                     case 3: pizzaSlice = (i + 1) + ") Olive Pizza Slice      "; break;
                     case 4: pizzaSlice = (i + 1) + ") Pineapple Pizza Slice  "; break;
-                    case 5: pizzaSlice = (i + 1) + ") Pepperoni Pizza Slice  "; break;
+                    case 5: pizzaSlice = (i + 1) + ") Margherita Pizza Slice "; break;
+                    case 6: pizzaSlice = (i + 1) + ") Pepperoni Pizza Slice  "; break;
                     default: System.out.println("Something went wrong in the endGame() method");
                 }
 
