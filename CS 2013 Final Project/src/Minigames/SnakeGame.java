@@ -18,7 +18,10 @@ public class SnakeGame {
     private final Scanner userInputScanner = new Scanner(System.in);
 
     // Constructor to initialize the game
+    // Constructor to initialize the game
     public SnakeGame() {
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("Welcome to the Snake Game! Win 3 apples without colliding with yourself or the walls to win the game!");
         initializeGame();
     }
 
