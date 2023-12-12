@@ -297,7 +297,7 @@ public class WordScramble
             this.setOfWords.put("#CAT", 5);
             this.setOfWords.put("#HAT", 5);
             this.setOfWords.put("#ACT", 5);
-            this.setOfWords.put("#THE", 5);
+            this.setOfWords.put("#ATE", 5);
             this.setOfWords.put("#HEAT", 10);
             this.setOfWords.put("#ACHE", 10);
             this.setOfWords.put("#EACH", 10);
