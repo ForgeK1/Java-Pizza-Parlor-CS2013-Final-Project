@@ -9,9 +9,7 @@ import java.util.Scanner;
         This will be the official game that will be use the minigame classes
         we made and the overall sequence of events the player will experience
 
-    3) Class made by: Keyvan M. Kani & MD Islam
-
-    4) Course: Java 2013 Programming with Data Structures
+    3) Course: Java 2013 Programming with Data Structures
  */
 public class PizzaParlorGame
 {
@@ -270,7 +268,7 @@ public class PizzaParlorGame
             case 6:
                 System.out.println("\n Mini-Story #" + (miniStory + 1));
                 System.out.println("-----------------");
-                // ASCII ART GOES HERE
+                margheritaPizzaSlice();
                 System.out.println("\n After much contemplation, she wholeheartedly accepts to leave her job" +
                         " and work with him.\n" +
                         " They embark on a journey as co-owners, combining their" +
@@ -343,7 +341,7 @@ public class PizzaParlorGame
     }
 
     //----ASCII METHODS---- (This section is where ASCII methods will be stored)
-
+    //To-DO code for Rana
     //A method that will display the title of the game with that will look cool (～￣▽￣)～
     public static void asciiTitleOfGame()
     {
@@ -496,8 +494,7 @@ public class PizzaParlorGame
     }
 
     //ASCII art of a pepperoni pizza slice for showcaseMiniStory() method
-    public static void pepperoniPizzaSlice()
-    {
+    public static void pepperoniPizzaSlice() {
         System.out.println("+----------------------------------------------+");
         System.out.println("               Pepperoni!");
         System.out.println("+----------------------------------------------+");
@@ -509,6 +506,27 @@ public class PizzaParlorGame
         System.out.println("+----------------------------------------------+");
     }
 
+    public static void margheritaPizzaSlice() {
+
+        System.out.println("+----------------------------------------------+");
+        System.out.println("               Margherita (tomato)!");
+        System.out.println("+----------------------------------------------+");
+        System.out.println("                   ,");
+        System.out.println("                  /.\\");
+        System.out.println("                 //_`\\");
+        System.out.println("            _.-`| \\ ``._");
+        System.out.println("        .-''`-.       _.'`.");
+        System.out.println("      .'      / /'\\/`.\\    `.");
+        System.out.println("     /   .    |/         `.  \\");
+        System.out.println("    '   /                  \\  ;");
+        System.out.println("   :   '            \\       : :");
+        System.out.println("   ;  ;             ;      /  .");
+        System.out.println("    ' :             .     '  /");
+        System.out.println("     \\ \\           /       .'");
+        System.out.println("      `.`        .'      .'");
+        System.out.println("        `-..___....----`");
+        System.out.println("+----------------------------------------------+");
+    }
     //ASCII art of a pizza tray full of pizza slices for the endOfGame() method
     public static void pizzaTray()
     {
