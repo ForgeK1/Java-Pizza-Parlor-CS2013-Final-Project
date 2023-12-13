@@ -68,7 +68,7 @@ public class PizzaParlorGame
         System.out.print("\nInput any letter to begin: ");
         input.next().charAt(0);
 
-        //A for loop to play 6 minigames and showcase each mini-story in sequence
+        //A for loop to play 7 minigames and showcase each mini-story in sequence
         for(int miniStory = 0; miniStory < 7; miniStory++)
         {
             //System.out.println("\n--Loop ran--\n");
@@ -89,8 +89,6 @@ public class PizzaParlorGame
             }
             else
             {
-                //TO-DO CODE FOR MD ISLAM
-
                 /*Notes: Tell the player that they failed the minigame and did not make the intended pizza slice
                          --> They move on to making the next pizza slice. If its the last iteration, let them
                              know that this was their last pizza making session.*/
