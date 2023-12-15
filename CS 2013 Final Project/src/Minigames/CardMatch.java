@@ -1,6 +1,8 @@
 package Minigames;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 /*
     1) Class Name: Card Match
@@ -18,15 +20,18 @@ import java.util.Scanner;
     4) Course: Java 2013 Programming with Data Structures
  */
 public class CardMatch {
+    
     Scanner input = new Scanner(System.in);
+	// data fields and structures
     private ArrayList<Character> randomLetters = new ArrayList<>();
+    Map<Integer, Character> hashmap = new HashMap<>();
     private Node head;
     private Node lastRowHead;
     private int numRows;
     private int numCols;
     private int numGuesses = 0;
     private final int GUESS_LIMIT = 15; // a static guess limit that will not change
-
+    // constructor 
     public CardMatch(int numRows, int numCols) {
         this.numRows = numRows;
         this.numCols = numCols;
@@ -48,6 +53,7 @@ public class CardMatch {
         }
 
     }
+    // methods
     private void fillArrayList() {
         this.randomLetters.add('A');
         this.randomLetters.add('B');
@@ -84,27 +90,27 @@ public class CardMatch {
         return gridLocation.getCharacter();
     }
     public boolean play() {
-        System.out.println("\n------------------------------------");
+        System.out.println("------------------------------------");
         System.out.println("| Title of Minigame: CARD MATCH! |");
         System.out.println("------------------------------------");
         System.out.println("\n------------------------------------------------------------------------");
-        System.out.println("__DESCRIPTION__");
-        System.out.println("Welcome to Card Match! You will be given a set of letters (A-C),\nand the goal is to " +
-                "match each letter in the set twice on the board.\nYou are given 15 attempts, but don't let" +
-                " that number fool you.\nThis is an entirely luck-based game. Good luck, you'll need it...\n");
+        System.out.println("__DESCRIPTION__\n");
+        System.out.println(" Welcome to Card Match! You will be given a set of letters (A-C),\n and the goal is to " +
+                " match each letter in the set twice on the board.\n You are given 15 attempts, but don't let" +
+                " that number fool you.\n This is an entirely luck-based game. Good luck, you'll need it...\n");
 
-        System.out.println("LETTERS: " + this.randomLetters + "\n");
+        System.out.println(" LETTERS: " + this.randomLetters + "\n");
         display();
 
         // keeps running until the player exceeds the guess limit
         while((numGuesses < GUESS_LIMIT && !allSpotsFilled()) && !this.randomLetters.isEmpty()) {
             try {
                 // ============================FIRST INPUT==================================
-                System.out.println("Number of guesses: " + numGuesses);
+                System.out.println("\n Number of guesses: " + numGuesses);
                 // 1st input for letter
-                System.out.print("Pick a row: ");
+                System.out.print(" Pick a row: ");
                 int rowChoice1 = input.nextInt();
-                System.out.print("Pick a column: ");
+                System.out.print(" Pick a column: ");
                 int colChoice1 = input.nextInt();
                 // an edge case to check if the player enters an out of bounds grid location
                 if((rowChoice1 > this.numRows || rowChoice1 <= 0) || (colChoice1 > this.numCols || colChoice1 <= 0)) {
@@ -113,25 +119,36 @@ public class CardMatch {
                     continue;
                 }
 
+                int numberOnBoard = rowAndColToNumberOnBoard(rowChoice1, colChoice1);
+               
+                
                 if(isSpotOpen(rowChoice1, colChoice1)) {
-                    // every time the placeMove() method is called the letter is removed from the arraylist
+                    // every time the placeMove() method is called the letter is removed from the arraylist  
+                
                     placeMove(rowChoice1, colChoice1);
-                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+                    hashmap.put(numberOnBoard, getNodeChar(rowChoice1, colChoice1));
+                    // put both the row and col into the hashmap so we know
+                    // which spot has already been guessed and we can use that information
+                    // to save the chosen character
+                    
+                    
+                    System.out.println(" Key: " + hashmap);
+                    System.out.println("\n LETTERS: " + this.randomLetters + "\n");
 
                     numGuesses++;
                     display();
                 }
                 else {
                     System.out.println("~~ Spot is already taken! Choose another location!~~");
-                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+                    System.out.println("\n LETTERS: " + this.randomLetters + "\n");
                     System.out.println();
                     continue;
                 }
                 // ============================SECOND INPUT====================================
                 // 2nd input for letter to check if it matches the first input
-                System.out.print("Pick a row: ");
+                System.out.print("\n Pick a row: ");
                 int rowChoice2 = input.nextInt();
-                System.out.print("Pick a column: ");
+                System.out.print(" Pick a column: ");
                 int colChoice2 = input.nextInt();
                 // an edge case to check if the player enters an out of bounds grid location
                 if((rowChoice1 > this.numRows || rowChoice1 <= 0) || (colChoice1 > this.numCols || colChoice1 <= 0)) {
@@ -140,10 +157,17 @@ public class CardMatch {
                     continue;
                 }
 
+                
+                int numberOnBoard2 = rowAndColToNumberOnBoard(rowChoice2, colChoice2); // 1
+                
                 if(isSpotOpen(rowChoice2, colChoice2) ) {
                     // every time the placeMove() method is called the letter is removed from the arraylist
+                	
                     placeMove(rowChoice2, colChoice2);
-                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+                    hashmap.put(numberOnBoard2, getNodeChar(rowChoice2, colChoice2));
+                      
+                    System.out.println(" Key: " + hashmap);
+                    System.out.println("\n LETTERS: " + this.randomLetters + "\n");
                     // check if the previous letter and the latest letter match, if they do, then continue with the
                     // updated board filled with the letters
                     char letter1 = getNodeChar(rowChoice1, colChoice1);
@@ -151,16 +175,16 @@ public class CardMatch {
 
                     if(letter1 == letter2) {
                         display();
-                        System.out.println("Correct! You have matched the letter!");
+                        System.out.println("\n Correct! You have matched the letter!");
                     }
                     else {
                         display();
-                        System.out.println("Nope! Not the same letter!");
+                        System.out.println("\n Nope! Not the same letter!");
                         // add the letters back so that the they don't get removed from the arraylist everytime
                         // the placeMove() method is called
                         this.randomLetters.add(letter1);
                         this.randomLetters.add(letter2);
-                        System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+                        System.out.println("\n LETTERS: " + this.randomLetters + "\n");
                         // reset the board back to the original board since the letters didn't match
                         resetGridSpot(rowChoice1, colChoice1);
                         resetGridSpot(rowChoice2, colChoice2);
@@ -176,33 +200,35 @@ public class CardMatch {
                     System.out.println("~~ Spot is already taken! Choose another location! ~~");
                     this.randomLetters.add(getNodeChar(rowChoice1, colChoice1));
                     resetGridSpot(rowChoice1, colChoice1);
-                    System.out.println("\nLETTERS: " + this.randomLetters + "\n");
+                    System.out.println("\n LETTERS: " + this.randomLetters + "\n");
                     //System.out.println();
 
                     display();
                     continue;
                 }
+                
+                System.out.println(" Key: " + hashmap);
 
                 // ================================================================
             }
             catch (InputMismatchException ime) {
                 input.next();
-                System.out.println("Invalid operand. Try again: ");
+                System.out.println(" Invalid operand. Try again: ");
             }
             catch (Exception e) {
                 input.next();
-                System.out.println("Unexpected error.");
+                System.out.println(" Unexpected error.");
             }
 
         }
         // IF THE ARRAYLIST IS EMPTY, THAT MEANS THE PLAYER HAS GUESSED ALL THE LETTERS TWICE IN THE BOARD
         // AND HAVE BEEN REMOVED
         if(this.randomLetters.isEmpty()) {
-            System.out.println("Congratulations! You have matched all the letters!");
+            System.out.println(" Congratulations! You have matched all the letters!");
             return true;
         }
         else {
-            System.out.println("Better luck next time...");
+            System.out.println(" Better luck next time...");
         }
 
         return false;
@@ -223,7 +249,11 @@ public class CardMatch {
         return true;
     }
     private void placeMove(int row, int col) {
-        Node gridLocation = this.head;
+    	Node gridLocation = this.head;
+    	
+    	int numberOnBoard = rowAndColToNumberOnBoard(row, col);
+   
+        //Node gridLocation = this.head;
 
         for(int r = 1; r < row; r++) {
             gridLocation = gridLocation.nextRow;
@@ -231,6 +261,13 @@ public class CardMatch {
         for(int c = 1; c < col; c++) {
             gridLocation = gridLocation.nextCol;
         }
+        
+        if(hashmap.containsKey(numberOnBoard)) {
+        	gridLocation.setCharacter(hashmap.get(numberOnBoard));
+        	this.randomLetters.remove(hashmap.get(numberOnBoard));
+        	return;
+        }
+         
         int randomCharIndex = (int)(Math.random() * this.randomLetters.size());
         gridLocation.setCharacter(this.randomLetters.get(randomCharIndex));
         this.randomLetters.remove(randomCharIndex);
@@ -280,6 +317,43 @@ public class CardMatch {
         return false;
     }
 
+    private int rowAndColToNumberOnBoard(int row, int col) {
+    	
+    	int numberOnBoard = 0;
+    	
+    	if(row == 1 && col == 1) {
+    		numberOnBoard = 1;
+    	}
+    	else if(row == 1 && col == 2) {
+    		numberOnBoard = 2;
+    	}
+    	else if(row == 1 && col == 3) {
+    		numberOnBoard = 3;
+    	}
+    	else if(row == 2 && col == 1) {
+    		numberOnBoard = 4;
+    	}
+    	else if(row == 2 && col == 2) {
+    		numberOnBoard = 5;
+    	}
+    	else if(row == 2 && col == 3) {
+    		numberOnBoard = 6;
+    	}
+    	else if(row == 3 && col == 1) {
+    		numberOnBoard = 7;
+    	}
+    	else if(row == 3 && col == 2) {
+    		numberOnBoard = 8;
+    	}
+    	else if(row == 3 && col == 3) {
+    		numberOnBoard = 9;
+    	}
+    	else {
+    		return 0;
+    	}
+    	
+    	return numberOnBoard;	
+    }
     public void display() {
         if(this.head == null) {
             System.out.println("This instance of Card Match is empty.");
@@ -290,7 +364,7 @@ public class CardMatch {
         //System.out.println(" + -- -- -- -- -- -- +");
         while(currRow != null) {
             Node currCol = currRow;
-            System.out.print("|");
+            System.out.print(" |");
             while(currCol != null) {
                 System.out.printf("%5s ", currCol.getCharacter());
                 currCol = currCol.nextCol;
@@ -301,5 +375,4 @@ public class CardMatch {
         }
         //System.out.println(" + -- -- -- -- -- -- +");
     }
-
 }
